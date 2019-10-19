@@ -1,0 +1,47 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://assets/Sprite Frames/frog_blue_suit_talk/frog_blue_suit_talk-0.png" type="Texture" id=1]
+[ext_resource path="res://assets/Sprite Frames/frog_blue_suit_walk/frog_blue_suit_walk-0.png" type="Texture" id=2]
+[ext_resource path="res://assets/Sprite Frames/frog_blue_suit_walk/frog_blue_suit_walk-1.png" type="Texture" id=3]
+[ext_resource path="res://assets/Sprite Frames/frog_blue_suit_walk/frog_blue_suit_walk-2.png" type="Texture" id=4]
+[ext_resource path="res://assets/Sprite Frames/frog_blue_suit_walk/frog_blue_suit_walk-3.png" type="Texture" id=5]
+[ext_resource path="res://assets/Sprite Frames/frog_blue_suit_talk/frog_blue_suit_talk-1.png" type="Texture" id=6]
+[ext_resource path="res://assets/Sprite Frames/frog_blue_suit_talk/frog_blue_suit_talk-2.png" type="Texture" id=7]
+[ext_resource path="res://assets/Sprite Frames/frog_blue_suit_talk/frog_blue_suit_talk-3.png" type="Texture" id=8]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 6 ), ExtResource( 3 ), ExtResource( 7 ), ExtResource( 4 ), ExtResource( 8 ), ExtResource( 5 ) ],
+"loop": false,
+"name": "twalk",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "talk",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 98.5527, 464.231 )
+
+[node name="Frog Cutscene" type="KinematicBody2D"]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "idle"
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -35, -2 )
+shape = SubResource( 2 )
