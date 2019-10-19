@@ -14,14 +14,20 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
     if direction == 1:
+        $Walk.flip_h = false
         $Idle.flip_h = false
+        $Attack.flip_h = false
     else:
+        $Walk.flip_h = true
         $Idle.flip_h = true
+        $Attack.flip_h = true
     
     velocity.x = SPEED * direction
-    velocity.y += GRAVITY 
-    walk()
-    velocity = move_and_slide(velocity, FLOOR)
+    velocity.y += GRAVITY
+    
+    if not $AnimationPlayer.is_playing() or $AnimationPlayer.current_animation == "Walk":
+        walk()
+    
     
     if is_on_wall():
         direction = direction * -1
@@ -35,6 +41,8 @@ func walk():
     $Attack.visible = false
     $Walk.visible = true
     $AnimationPlayer.play("Walk")
+    velocity = move_and_slide(velocity, FLOOR)
+
 
 func idle():
     $Walk.visible = false
@@ -42,8 +50,10 @@ func idle():
     $Idle.visible = true
     $AnimationPlayer.play("Idle")
     
+    
 func attack():
     $Idle.visible = false
     $Walk.visible = false
     $Attack.visible = true
     $AnimationPlayer.play("Attack")
+

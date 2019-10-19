@@ -1,0 +1,166 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/environment/minecraftdirt.png" type="Texture" id=1]
+[ext_resource path="res://scenes/Small Skele.tscn" type="PackedScene" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 200.404, 199.883 )
+
+[node name="test" type="Node2D"]
+
+[node name="dirt 00" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 209.59, 452.027 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="dirt 00"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dirt 00/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="dirt 11" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 209.59, 262.654 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="dirt 11"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dirt 11/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="dirt 01" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 1189.51, 441.418 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="dirt 01"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dirt 01/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="dirt 12" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 1189.51, 263.228 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="dirt 12"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dirt 12/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="dirt 03" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 1189.51, 600 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="dirt 03"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dirt 03/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="dirt 04" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 1031.97, 600 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="dirt 04"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dirt 04/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="dirt 05" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 889.766, 600 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="dirt 05"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dirt 05/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="dirt 06" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 744.8, 600 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="dirt 06"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dirt 06/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="dirt 07" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 557.429, 600 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="dirt 07"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dirt 07/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="dirt 08" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 393.297, 600 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="dirt 08"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dirt 08/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="dirt 09" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 209.59, 600 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="dirt 09"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dirt 09/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="Small Skele" parent="." instance=ExtResource( 2 )]
+position = Vector2( 434.022, 371.055 )
