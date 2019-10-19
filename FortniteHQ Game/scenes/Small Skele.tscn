@@ -36,6 +36,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 5, 6, 7, 8 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("CollisionPolygon2D:polygon")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ PoolVector2Array( -54.8328, -69.9055, 22.6002, -69.9055, 22.4868, 129.375, -54.4933, 130.129 ), PoolVector2Array( -53.7386, -59.3023, 21.7321, -59.3023, 22.4868, 129.375, -54.4933, 130.129 ), PoolVector2Array( -54.116, -69.8682, 22.1095, -69.8682, 22.4868, 129.375, -54.4933, 130.129 ) ]
+}
 
 [sub_resource type="Animation" id=3]
 resource_name = "Walk"
@@ -63,11 +75,12 @@ script = ExtResource( 1 )
 texture = ExtResource( 2 )
 vframes = 3
 hframes = 5
-frame = 3
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+frame = 7
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Attack = SubResource( 1 )
 anims/Still = SubResource( 2 )
 anims/Walk = SubResource( 3 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -53.7386, -59.3023, 21.7321, -59.3023, 22.4868, 129.375, -54.4933, 130.129 )
