@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/column.png-71af782f20d367bf527ba9078bbd58e2.stex"
+path="res://.import/health_potion.png-6b2c5fdc42a8f4c216b1fa5ded70c174.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/environment/column.png"
-dest_files=[ "res://.import/column.png-71af782f20d367bf527ba9078bbd58e2.stex" ]
+source_file="res://assets/png/health_potion.png"
+dest_files=[ "res://.import/health_potion.png-6b2c5fdc42a8f4c216b1fa5ded70c174.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/column.png-71af782f20d367bf527ba9078bbd58e2.stex"
+path="res://.import/frog_blue_suit.png-b55bb3dc6d6a62f64adc72a0e14628a8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/environment/column.png"
-dest_files=[ "res://.import/column.png-71af782f20d367bf527ba9078bbd58e2.stex" ]
+source_file="res://assets/png/frog_blue_suit.png"
+dest_files=[ "res://.import/frog_blue_suit.png-b55bb3dc6d6a62f64adc72a0e14628a8.stex" ]
 
 [params]
 

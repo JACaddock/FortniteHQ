@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/column.png-71af782f20d367bf527ba9078bbd58e2.stex"
+path="res://.import/goblinthingsmall_attack.png-1b3050f0c5fa7c1f074bc2e810cae4c4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/environment/column.png"
-dest_files=[ "res://.import/column.png-71af782f20d367bf527ba9078bbd58e2.stex" ]
+source_file="res://assets/spritesheets/goblinthingsmall_attack.png"
+dest_files=[ "res://.import/goblinthingsmall_attack.png-1b3050f0c5fa7c1f074bc2e810cae4c4.stex" ]
 
 [params]
 

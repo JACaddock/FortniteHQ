@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/column.png-71af782f20d367bf527ba9078bbd58e2.stex"
+path="res://.import/big_slime_jump.png-c1fda314826804c90ed5934ada6de34d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/environment/column.png"
-dest_files=[ "res://.import/column.png-71af782f20d367bf527ba9078bbd58e2.stex" ]
+source_file="res://assets/spritesheets/big_slime_jump.png"
+dest_files=[ "res://.import/big_slime_jump.png-c1fda314826804c90ed5934ada6de34d.stex" ]
 
 [params]
 
