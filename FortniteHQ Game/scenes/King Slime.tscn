@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/spritesheets/big_slime_jump.png" type="Texture" id=1]
 [ext_resource path="res://assets/spritesheets/big_slime_walk.png" type="Texture" id=2]
@@ -76,24 +76,51 @@ tracks/1/keys = {
 [sub_resource type="Animation" id=3]
 resource_name = "Walking"
 
+[sub_resource type="AnimationNodeAnimation" id=4]
+animation = "Jumping"
+
+[sub_resource type="AnimationNodeAnimation" id=5]
+animation = "Walk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=6]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=7]
+
+[sub_resource type="AnimationNodeStateMachine" id=8]
+states/Jumping/node = SubResource( 4 )
+states/Jumping/position = Vector2( 94, 90 )
+states/Walk/node = SubResource( 5 )
+states/Walk/position = Vector2( 377, 95 )
+transitions = [ "Walk", "Jumping", SubResource( 6 ), "Jumping", "Walk", SubResource( 7 ) ]
+graph_offset = Vector2( -150.864, 0 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=9]
+
 [node name="King Slime" type="KinematicBody2D"]
 
 [node name="Jump" type="Sprite" parent="."]
 position = Vector2( 3, -1 )
 texture = ExtResource( 1 )
 hframes = 11
-frame = 4
+frame = 7
 
 [node name="Walk" type="Sprite" parent="."]
-visible = false
 texture = ExtResource( 2 )
 hframes = 4
+frame = 3
 
 [node name="Hit Box" type="CollisionPolygon2D" parent="."]
 position = Vector2( 1, -1 )
-polygon = PoolVector2Array( -81, -27, -97, 21, -100, 66, -91, 104, -52, 142, -1, 167, 68, 165, 89, 144, 128, 98, 132, 49, 105, -16, 89, -43, 71, -59, 39, -61, 34, -122, -16, -122, -19, -60, -49, -58 )
+polygon = PoolVector2Array( -81, -27, -99, 3, -96, 59, -84, 99, -46, 134, -5, 151, 63, 152, 103, 124, 128, 98, 131, 38, 112, -18, 92, -52, 39, -75, 34, -129, -19, -131, -20, -74, -56, -64 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Jumping = SubResource( 1 )
 anims/Walk = SubResource( 2 )
 anims/Walking = SubResource( 3 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 8 )
+anim_player = NodePath("../AnimationPlayer")
+parameters/playback = SubResource( 9 )
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
