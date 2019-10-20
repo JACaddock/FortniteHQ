@@ -350,6 +350,7 @@ shape = SubResource( 1 )
 "anims/Walk R" = SubResource( 7 )
 
 [node name="Hitbox" type="Area2D" parent="."]
+editor/display_folded = true
 
 [node name="body2" type="CollisionShape2D" parent="Hitbox" groups=[
 "player",

@@ -50,7 +50,7 @@ func _physics_process(delta):
     else:
         if velocity.x > 0 and velocity.y < 0:
             anim_switch("Jump R")
-        elif velocity.x < 0:
+        elif velocity.y < 0:
             anim_switch("Jump L")
             
     velocity.y += GRAVITY + (delta * 10)
