@@ -2,14 +2,13 @@ extends KinematicBody2D
 
 var speed = 200
 #const scene_up = Vector2(0, -1)
-const JUMP_POWER = -250
+const JUMP_POWER = -300
 const GRAVITY = 10
 const FLOOR = Vector2(0, -1)
 var onGround = true
 var velocity = Vector2()
 var direction
 var hasHealth = true
-var health = 2
 
 
 func get_input():                
@@ -35,35 +34,39 @@ func _physics_process(delta):
     
     if onGround:
         if velocity.x != 0:
-    	    if velocity.x > 0:
-            	anim_switch("Walk R")
-            	direction = 1
-    	    else:
-    		    anim_switch("Walk L")
-    		    direction = -1
+        	if velocity.x > 0:
+                anim_switch("Walk R")
+                direction = 1
+        	else:
+        		anim_switch("Walk L")
+        		direction = -1
         else: 
-    	    if direction == 1:
-    		    anim_switch("Still R")
-    	    else:
-    		    anim_switch("Still L")
-    
+        	if direction == 1:
+        		anim_switch("Still R")
+        	else:
+        		anim_switch("Still L")
+        
     else:
         if velocity.x > 0 and velocity.y < 0:
             anim_switch("Jump R")
         elif velocity.y < 0:
             anim_switch("Jump L")
-        
+            
     velocity.y += GRAVITY + (delta * 10)
-    
+        
     if is_on_floor():
         onGround = true
     else:
         onGround = false
-        
-    velocity = move_and_slide( velocity, FLOOR )
             
+    velocity = move_and_slide( velocity, FLOOR )
+                
 
 func anim_switch(animation):
     var newanim = str(animation)
     if $AnimationPlayer.current_animation != newanim:
         $AnimationPlayer.play(newanim)
+
+func _on_Hitbox_body_entered(body):
+    if body.is_in_group("enemies"):
+        queue_free()
