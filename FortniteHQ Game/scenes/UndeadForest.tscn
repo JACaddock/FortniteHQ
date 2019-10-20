@@ -5,7 +5,7 @@
 [ext_resource path="res://scenes/PlayerUp.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 4110, 70 )
+extents = Vector2( 4810, 70 )
 
 [node name="Undead" type="Node2D"]
 
@@ -54,13 +54,9 @@ __meta__ = {
 }
 
 [node name="Tower" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( 7310, 450 )
-scale = Vector2( 10, 10 )
+position = Vector2( 8600, 450 )
 z_index = 3
 texture = ExtResource( 2 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="PlayerUp" parent="." instance=ExtResource( 3 )]
 position = Vector2( 80, 720 )
@@ -69,5 +65,5 @@ scale = Vector2( 0.4, 0.4 )
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 4050, 910 )
+position = Vector2( 4680, 930 )
 shape = SubResource( 1 )
