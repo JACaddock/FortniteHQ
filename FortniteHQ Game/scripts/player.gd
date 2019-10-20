@@ -5,7 +5,7 @@ var speed = 200
 const JUMP_POWER = -250
 const GRAVITY = 10
 const FLOOR = Vector2(0, -1)
-var onGround = false
+var onGround = true
 var velocity = Vector2()
 var direction
 var hasHealth = true
@@ -24,7 +24,7 @@ func get_input():
     else:
         velocity.x = 0
         
-    if Input.is_action_just_pressed("jump"):
+    if Input.is_action_pressed("jump"):
         if onGround:
             velocity.y = JUMP_POWER
             onGround = false
@@ -33,18 +33,25 @@ func get_input():
 func _physics_process(delta):
     get_input()
     
-    if velocity.x != 0:
-	    if velocity.x > 0:
-        	anim_switch("Walk R")
-        	direction = 1
-	    else:
-		    anim_switch("Walk L")
-		    direction = -1
-    else: 
-	    if direction == 1:
-		    anim_switch("Still R")
-	    else:
-		    anim_switch("Still L")
+    if onGround:
+        if velocity.x != 0:
+    	    if velocity.x > 0:
+            	anim_switch("Walk R")
+            	direction = 1
+    	    else:
+    		    anim_switch("Walk L")
+    		    direction = -1
+        else: 
+    	    if direction == 1:
+    		    anim_switch("Still R")
+    	    else:
+    		    anim_switch("Still L")
+    
+    else:
+        if velocity.x > 0 and velocity.y < 0:
+            anim_switch("Jump R")
+        elif velocity.y < 0:
+            anim_switch("Jump L")
         
     velocity.y += GRAVITY + (delta * 10)
     
