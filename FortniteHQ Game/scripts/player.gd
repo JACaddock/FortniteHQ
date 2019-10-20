@@ -15,11 +15,11 @@ var health = 2
 func get_input():                
     if Input.is_action_pressed('ui_right'):
         velocity.x = speed
-        $Sprite.flip_h = false
+        $Player.flip_h = false
         
     elif Input.is_action_pressed("ui_left"):
         velocity.x = -speed
-        $Sprite.flip_h = true
+        $Player.flip_h = true
         
     else:
         velocity.x = 0
