@@ -7,7 +7,7 @@ extents = Vector2( 230, 280 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "Attack L"
-length = 0.7
+length = 0.8
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Wizard:frame")
@@ -16,10 +16,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 0, 1, 2, 3, 4, 5, 6 ]
+"values": [ 0, 1, 2, 3, 4, 5, 6, 2 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Wizard:flip_h")
@@ -112,10 +112,10 @@ tracks/8/loop_wrap = true
 tracks/8/imported = false
 tracks/8/enabled = true
 tracks/8/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ Vector2( 0, 160 ), Vector2( 55, 220 ), Vector2( 110, 330 ), Vector2( 210, 470 ), Vector2( 110, 600 ), Vector2( -240, 670 ), Vector2( -580, 670 ) ]
+"values": [ Vector2( 0, 160 ), Vector2( 55, 220 ), Vector2( 110, 330 ), Vector2( 210, 470 ), Vector2( 110, 600 ), Vector2( -240, 670 ), Vector2( -580, 670 ), Vector2( 110, 330 ) ]
 }
 tracks/9/type = "value"
 tracks/9/path = NodePath("Moving Orb:scale")
@@ -128,6 +128,66 @@ tracks/9/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ Vector2( 1, 1 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Orb:frame")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0.6 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 7 ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Extra Orb:polygon")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0.7 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ PoolVector2Array( -610, 230, -650, 250, -650, 300, -610, 350, -560, 350, -510, 330, -500, 270, -530, 230, -550, 220 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Extra Orb:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0.7 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -220, -20 ) ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Orb:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("Extra Orb:disabled")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -641,13 +701,15 @@ tracks/6/keys = {
 texture = ExtResource( 1 )
 vframes = 3
 hframes = 8
-frame = 1
+frame = 2
 
 [node name="Moving Orb" type="CollisionPolygon2D" parent="."]
-position = Vector2( 55, 220 )
+visible = false
+position = Vector2( 110, 330 )
 polygon = PoolVector2Array( 140, -350, 200, -350, 240, -370, 250, -390, 250, -430, 210, -480, 150, -480, 100, -450, 100, -390 )
 
 [node name="Static Orb" type="CollisionPolygon2D" parent="."]
+visible = false
 position = Vector2( 0, 160 )
 polygon = PoolVector2Array( -230, -250, -260, -240, -320, -240, -350, -270, -360, -320, -350, -350, -310, -370, -250, -370, -210, -330, -210, -270 )
 
@@ -662,3 +724,17 @@ shape = SubResource( 1 )
 "anims/Still R" = SubResource( 5 )
 "anims/Walk L" = SubResource( 6 )
 "anims/Walk R" = SubResource( 7 )
+
+[node name="Orb" type="Sprite" parent="."]
+visible = false
+position = Vector2( -780, 280 )
+texture = ExtResource( 1 )
+vframes = 3
+hframes = 8
+frame = 7
+
+[node name="Extra Orb" type="CollisionPolygon2D" parent="."]
+visible = false
+position = Vector2( -220, -20 )
+polygon = PoolVector2Array( -610, 230, -650, 250, -650, 300, -610, 350, -560, 350, -510, 330, -500, 270, -530, 230, -550, 220 )
+disabled = true
