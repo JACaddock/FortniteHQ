@@ -1,14 +1,13 @@
 extends KinematicBody2D
 
 var speed = 200
-#const scene_up = Vector2(0, -1)
 const JUMP_POWER = -300
 const GRAVITY = 10
 const FLOOR = Vector2(0, -1)
 var onGround = true
 var velocity = Vector2()
 var direction
-var hasHealth = true
+#var hasHealth = true
 var attacking = false
 
 

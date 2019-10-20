@@ -129,11 +129,11 @@ stream = ExtResource( 8 )
 volume_db = 6.0
 autoplay = true
 
-[node name="PlayerUp" parent="." instance=ExtResource( 9 )]
-position = Vector2( 143.5, 730.086 )
+[node name="PlayerV2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 3939.07, 742.389 )
 scale = Vector2( 0.3, 0.3 )
 
-[node name="Camera2D" type="Camera2D" parent="PlayerUp"]
+[node name="Camera2D" type="Camera2D" parent="PlayerV2"]
 position = Vector2( -29.3634, -9.78748 )
 offset = Vector2( 0, -400 )
 current = true

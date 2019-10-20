@@ -1,8 +1,35 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/SlimeSmall.gd" type="Script" id=1]
 [ext_resource path="res://assets/spritesheets/SlimeSS.png" type="Texture" id=2]
 
+[sub_resource type="Animation" id=5]
+resource_name = "Dead"
+length = 0.32
+tracks/0/type = "value"
+tracks/0/path = NodePath("Slime:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.670588, 0.243137, 0.243137, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Slime:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
 
 [sub_resource type="Animation" id=1]
 resource_name = "Walk L"
@@ -79,6 +106,30 @@ tracks/5/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Head/CollisionShape2D:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( -82, -32 ), Vector2( -67, -32 ), Vector2( -70.75, -44 ), Vector2( -82.5, -53 ), Vector2( -96.25, -41.5 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Slime:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -157,12 +208,24 @@ tracks/5/keys = {
 "update": 1,
 "values": [ true ]
 }
+tracks/6/type = "value"
+tracks/6/path = NodePath("Slime:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 3084.18, 348.353 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 64.9991, 13.0003 )
+extents = Vector2( 56.0011, 13.0003 )
 
 [node name="SmallSlime" type="KinematicBody2D" groups=[
 "enemies",
@@ -177,28 +240,35 @@ hframes = 5
 frame = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Dead = SubResource( 5 )
 "anims/Walk L" = SubResource( 1 )
 "anims/Walk R" = SubResource( 2 )
 
 [node name="Body" type="CollisionPolygon2D" parent="." groups=[
 "enemies",
 ]]
+visible = false
 polygon = PoolVector2Array( -119.939, -47.3177, -155.778, -22.8825, -171.253, 2.36719, -170.439, 40.649, -148.447, 71.6002, -138.673, 117.213, 58.4374, 118.027, 11.196, 73.2292, -9.98114, 28.4314, -19.7552, -17.9955, -53.15, -49.7612 )
 
 [node name="Detector" type="Area2D" parent="."]
 editor/display_folded = true
+visible = false
 monitorable = false
 collision_layer = 0
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]
 position = Vector2( -70.6384, -178.22 )
 shape = SubResource( 3 )
 
 [node name="Head" type="Area2D" parent="."]
+visible = false
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Head"]
-position = Vector2( -88, -44 )
+position = Vector2( -96.25, -41.5 )
 shape = SubResource( 4 )
 [connection signal="body_entered" from="Detector" to="." method="_on_Detector_body_entered"]
 [connection signal="body_exited" from="Detector" to="." method="_on_Detector_body_exited"]
