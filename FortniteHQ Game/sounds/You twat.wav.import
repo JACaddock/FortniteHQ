@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/You twat.wav-86563fb7a6c42b5ac3a005fe160f823a.sample"
+
+[deps]
+
+source_file="res://sounds/You twat.wav"
+dest_files=[ "res://.import/You twat.wav-86563fb7a6c42b5ac3a005fe160f823a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

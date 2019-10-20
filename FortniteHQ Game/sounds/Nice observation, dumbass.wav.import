@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Nice observation, dumbass.wav-1f992649c009340aefd7ce158586a6ef.sample"
+
+[deps]
+
+source_file="res://sounds/Nice observation, dumbass.wav"
+dest_files=[ "res://.import/Nice observation, dumbass.wav-1f992649c009340aefd7ce158586a6ef.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

@@ -518,11 +518,10 @@ extents = Vector2( 38.3764, 100.244 )
 [node name="SkeletonShield" type="KinematicBody2D"]
 
 [node name="Skeleton" type="Sprite" parent="."]
-position = Vector2( -1.99292, 0 )
+position = Vector2( 1, 0 )
 texture = ExtResource( 1 )
-flip_h = true
 hframes = 17
-frame = 12
+frame = 15
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 "anims/Still L" = SubResource( 1 )
@@ -533,9 +532,12 @@ frame = 12
 "anims/Walk R" = SubResource( 6 )
 
 [node name="Body" type="CollisionShape2D" parent="."]
-position = Vector2( 11.344, 29.622 )
+visible = false
+position = Vector2( -13.325, 29.622 )
 shape = SubResource( 7 )
 
 [node name="Shield" type="CollisionPolygon2D" parent="."]
-position = Vector2( -1.25436, -0.418137 )
+visible = false
+position = Vector2( 5.43555, -0.418137 )
+scale = Vector2( -1, 1 )
 polygon = PoolVector2Array( -30, -70, -30, 20, -65, 20, -65, 110, -30, 110, -30, 130, -20, 130, -20, -70 )

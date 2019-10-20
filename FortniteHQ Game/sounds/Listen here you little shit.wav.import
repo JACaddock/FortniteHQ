@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Listen here you little shit.wav-1be86de38afb37b39850c4a1d9bfc043.sample"
+
+[deps]
+
+source_file="res://sounds/Listen here you little shit.wav"
+dest_files=[ "res://.import/Listen here you little shit.wav-1be86de38afb37b39850c4a1d9bfc043.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

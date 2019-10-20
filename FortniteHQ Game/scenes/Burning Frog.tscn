@@ -42,5 +42,6 @@ hframes = 5
 anims/Burn = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( -30, 0 )
 shape = SubResource( 2 )

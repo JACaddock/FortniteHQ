@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/minecraftdirt.png-6b4c8d6cb39844315ae13c41bb576ad3.stex"
+path="res://.import/minecraftdirt.png-8078a7abc8c0d09a6c709822c8c64d6e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/environment/minecraftdirt.png"
-dest_files=[ "res://.import/minecraftdirt.png-6b4c8d6cb39844315ae13c41bb576ad3.stex" ]
+source_file="res://assets/ENVIRONMENT/minecraftdirt.png"
+dest_files=[ "res://.import/minecraftdirt.png-8078a7abc8c0d09a6c709822c8c64d6e.stex" ]
 
 [params]
 

@@ -806,12 +806,10 @@ extents = Vector2( 90.1127, 205.358 )
 [node name="GoblinBoss" type="KinematicBody2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -30, -100 )
-scale = Vector2( 1.32, 1.32 )
 texture = ExtResource( 1 )
 vframes = 3
 hframes = 6
-frame = 10
+frame = 16
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 "anims/Attack L" = SubResource( 1 )
@@ -822,12 +820,17 @@ frame = 10
 "anims/Walk R" = SubResource( 6 )
 
 [node name="Body" type="CollisionShape2D" parent="."]
-position = Vector2( 12.9543, 0 )
-scale = Vector2( 1, 0.92 )
+visible = false
+position = Vector2( 20, -10 )
+scale = Vector2( 1, 0.95 )
 shape = SubResource( 7 )
 
 [node name="Club" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( -210, -210, -210, -280, -230, -310, -260, -290, -250, -240, -200, -110 )
+visible = false
+position = Vector2( 60, 70 )
+polygon = PoolVector2Array( -150, 10, -230, 10, -270, 30, -260, 60, -220, 70, -140, 30 )
 
 [node name="Swipe" type="CollisionPolygon2D" parent="."]
+visible = false
+position = Vector2( 30, 20 )
 polygon = PoolVector2Array( -10, 70, -40, 60, -60, 0, -60, -40, -70, -80, -70, -130, -60, -160, -40, -190, -10, -160, 20, -100, 30, -50, 10, 30 )

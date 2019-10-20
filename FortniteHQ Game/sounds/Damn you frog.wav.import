@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Damn you frog.wav-b871e635facb45c0729976afd7a064bf.sample"
+
+[deps]
+
+source_file="res://sounds/Damn you frog.wav"
+dest_files=[ "res://.import/Damn you frog.wav-b871e635facb45c0729976afd7a064bf.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

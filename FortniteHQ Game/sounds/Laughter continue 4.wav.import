@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Laughter continue 4.wav-5aa9c08a3900e2b1598663572a6effb8.sample"
+
+[deps]
+
+source_file="res://sounds/Laughter continue 4.wav"
+dest_files=[ "res://.import/Laughter continue 4.wav-5aa9c08a3900e2b1598663572a6effb8.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

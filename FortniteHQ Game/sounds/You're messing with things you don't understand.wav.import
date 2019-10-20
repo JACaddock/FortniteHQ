@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/You're messing with things you don't understand.wav-1f926ae3dca5731128bc83d59c5f3bb8.sample"
+
+[deps]
+
+source_file="res://sounds/You're messing with things you don't understand.wav"
+dest_files=[ "res://.import/You're messing with things you don't understand.wav-1f926ae3dca5731128bc83d59c5f3bb8.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Wow, you really showed them.wav-4056f558cca5c661b9136a08bd9cea92.sample"
+
+[deps]
+
+source_file="res://sounds/Wow, you really showed them.wav"
+dest_files=[ "res://.import/Wow, you really showed them.wav-4056f558cca5c661b9136a08bd9cea92.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

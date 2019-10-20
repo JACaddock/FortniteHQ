@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/You actually killed the wizard.wav-8ff13014f0dd03186493828ceef780ba.sample"
+
+[deps]
+
+source_file="res://sounds/You actually killed the wizard.wav"
+dest_files=[ "res://.import/You actually killed the wizard.wav-8ff13014f0dd03186493828ceef780ba.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

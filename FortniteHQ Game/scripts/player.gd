@@ -41,7 +41,7 @@ func _physics_process(delta):
         	else:
         		anim_switch("Walk L")
         		direction = -1
-        else: 
+        elif velocity.x == 0: 
         	if direction == 1:
         		anim_switch("Still R")
         	else:
@@ -70,4 +70,5 @@ func anim_switch(animation):
 
 func _on_Hitbox_body_entered(body):
     if body.is_in_group("enemies"):
-        queue_free()       
+        queue_free()
+        

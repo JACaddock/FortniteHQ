@@ -229,13 +229,14 @@ position = Vector2( 3, -1 )
 texture = ExtResource( 2 )
 vframes = 2
 hframes = 11
-frame = 11
+frame = 14
 
 [node name="Body" type="CollisionPolygon2D" parent="." groups=[
 "enemies",
 ]]
+visible = false
 position = Vector2( 1, -1 )
-polygon = PoolVector2Array( -48.5136, -14.7823, -74.9841, 11.6881, -95.1521, 50.1334, -93.8916, 110.007, -65.6801, 200.066, 232.226, 199.292, 174.192, 148.222, 137.051, 97.9266, 114.611, 43.7619, 92.9451, -5.76009, 68.1841, -17.3668, 39.7213, -29.2781, 37.2003, -99.8661, -16.3709, -99.8661, -15.7406, -30.5386 )
+polygon = PoolVector2Array( -64.305, -37.9125, -89.575, -15.35, -116.65, 33.385, -117.552, 92.0475, -107.625, 158.832, -84.16, 199.445, 232.226, 199.292, 157.71, 137.172, 119.805, 82.12, 98.145, 29.775, 67.46, -26.18, 45.8, -44.23, 13.31, -51.45, 14.2125, -100.185, -40.84, -101.088, -39.035, -50.5475 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." groups=[
 "enemies",
@@ -246,6 +247,7 @@ polygon = PoolVector2Array( -48.5136, -14.7823, -74.9841, 11.6881, -95.1521, 50.
 "anims/Walk R" = SubResource( 4 )
 
 [node name="Detector" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]
 shape = SubResource( 5 )

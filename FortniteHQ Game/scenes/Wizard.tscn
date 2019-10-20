@@ -704,16 +704,15 @@ hframes = 8
 frame = 2
 
 [node name="Moving Orb" type="CollisionPolygon2D" parent="."]
-visible = false
 position = Vector2( 110, 330 )
 polygon = PoolVector2Array( 140, -350, 200, -350, 240, -370, 250, -390, 250, -430, 210, -480, 150, -480, 100, -450, 100, -390 )
 
 [node name="Static Orb" type="CollisionPolygon2D" parent="."]
-visible = false
-position = Vector2( 0, 160 )
+position = Vector2( 0, 150 )
 polygon = PoolVector2Array( -230, -250, -260, -240, -320, -240, -350, -270, -360, -320, -350, -350, -310, -370, -250, -370, -210, -330, -210, -270 )
 
 [node name="Body" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( 0, 160 )
 shape = SubResource( 1 )
 
@@ -726,7 +725,6 @@ shape = SubResource( 1 )
 "anims/Walk R" = SubResource( 7 )
 
 [node name="Orb" type="Sprite" parent="."]
-visible = false
 position = Vector2( -780, 280 )
 texture = ExtResource( 1 )
 vframes = 3
@@ -737,4 +735,3 @@ frame = 7
 visible = false
 position = Vector2( -220, -20 )
 polygon = PoolVector2Array( -610, 230, -650, 250, -650, 300, -610, 350, -560, 350, -510, 330, -500, 270, -530, 230, -550, 220 )
-disabled = true

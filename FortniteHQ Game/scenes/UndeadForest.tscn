@@ -4,7 +4,6 @@
 [ext_resource path="res://assets/ENVIRONMENT/dead_forest_tower_transition_back.png" type="Texture" id=2]
 [ext_resource path="res://scenes/PlayerUp001.tscn" type="PackedScene" id=3]
 
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 4810, 70 )
 
@@ -64,6 +63,7 @@ position = Vector2( 80, 720 )
 scale = Vector2( 0.4, 0.4 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 4680, 930 )

@@ -492,10 +492,9 @@ tracks/5/keys = {
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
-flip_h = true
 vframes = 3
 hframes = 6
-frame = 16
+frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 "anims/Attack L" = SubResource( 1 )
@@ -506,9 +505,10 @@ frame = 16
 "anims/Walk R" = SubResource( 6 )
 
 [node name="Body" type="CollisionPolygon2D" parent="."]
-scale = Vector2( -1, 1 )
+visible = false
 polygon = PoolVector2Array( -9.04071, 25.3709, -31.14, 62.203, -0.446533, 106.402, -2.72339, 545.299, 239.241, 543.248, 167.472, 403.811, 155.169, 94.1787, 66.9951, 38.8139 )
 
 [node name="Attack" type="CollisionPolygon2D" parent="."]
-position = Vector2( -35.0437, 38.143 )
+visible = false
+position = Vector2( 124.904, -1.13206 )
 polygon = PoolVector2Array( -8.875, 141.341, -78.5936, 206.959, -90.8969, 260.273, -60.1387, 295.132, -10.9257, 295.132, 0.717407, 280.192, -45.3101, 285.607, -68.7751, 270.265, -74.1901, 232.36, -46.2126, 197.162, -1.08759, 152.037 )

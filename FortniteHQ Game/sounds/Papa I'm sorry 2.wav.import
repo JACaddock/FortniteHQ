@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Papa I'm sorry 2.wav-1411c4755aafee77d3fd6dfcc3820bcf.sample"
+
+[deps]
+
+source_file="res://sounds/Papa I'm sorry 2.wav"
+dest_files=[ "res://.import/Papa I'm sorry 2.wav-1411c4755aafee77d3fd6dfcc3820bcf.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

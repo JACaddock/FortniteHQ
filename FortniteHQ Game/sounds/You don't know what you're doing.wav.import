@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/You don't know what you're doing.wav-527a45ec07f59f1ca60f3e7b260e2490.sample"
+
+[deps]
+
+source_file="res://sounds/You don't know what you're doing.wav"
+dest_files=[ "res://.import/You don't know what you're doing.wav-527a45ec07f59f1ca60f3e7b260e2490.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

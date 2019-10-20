@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/This is for my village.wav-0b1f3c03125dcd80f215f343781a41e6.sample"
+
+[deps]
+
+source_file="res://sounds/This is for my village.wav"
+dest_files=[ "res://.import/This is for my village.wav-0b1f3c03125dcd80f215f343781a41e6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

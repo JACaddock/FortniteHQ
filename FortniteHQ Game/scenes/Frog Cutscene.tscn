@@ -21,15 +21,15 @@ animations = [ {
 "name": "walk",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 6 ), ExtResource( 3 ), ExtResource( 7 ), ExtResource( 4 ), ExtResource( 8 ), ExtResource( 5 ) ],
-"loop": false,
-"name": "twalk",
-"speed": 3.0
-}, {
 "frames": [ ExtResource( 1 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "talk",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 6 ), ExtResource( 3 ), ExtResource( 7 ), ExtResource( 4 ), ExtResource( 8 ), ExtResource( 5 ) ],
+"loop": false,
+"name": "twalk",
+"speed": 3.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -39,10 +39,11 @@ extents = Vector2( 98.5527, 464.231 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
-animation = "talk"
-frame = 3
+animation = "twalk"
+frame = 7
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( -35, -2 )
 shape = SubResource( 2 )

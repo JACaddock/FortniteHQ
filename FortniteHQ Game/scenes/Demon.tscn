@@ -269,9 +269,10 @@ extents = Vector2( 190, 560 )
 
 [node name="Demons" type="Sprite" parent="."]
 texture = ExtResource( 1 )
+flip_h = true
 vframes = 2
 hframes = 6
-frame = 3
+frame = 11
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 "anims/Attack L" = SubResource( 1 )
@@ -280,7 +281,11 @@ frame = 3
 "anims/Still R" = SubResource( 4 )
 
 [node name="Body" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource( 5 )
 
 [node name="Swipe" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( 170, -220, 230, -120, 190, -20, 150, 30, 250, 200, 470, 160, 550, 0, 490, -190, 390, -190, 360, 10, 300, -100, 240, -290 )
+visible = false
+scale = Vector2( -1, 1 )
+polygon = PoolVector2Array( -590, 50, -590, 210, -300, 340, -90, 330, 130, 270, 390, 90, 440, -20, 430, -130, 280, -270, 130, -90, 10, 10, -230, 70, -430, 40, -400, -60 )
+disabled = true
