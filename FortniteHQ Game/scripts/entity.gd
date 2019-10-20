@@ -8,15 +8,6 @@ var target
 var direction
 var hasHealth = true
 var health = 1
-
-
-func _ready():
-    $AnimationPlayer.play("Walk L")
-           
-        
-func _on_Detector_body_entered(body):
-    if body.is_in_group("player"):
-        target = body
         
 
 func _on_Detector_body_exited(body):
@@ -39,8 +30,6 @@ func movement_loop():
         velocity.x = 0
         
     velocity = move_and_slide( velocity, FLOOR )
-    
-    
     
 
 func _physics_process(delta):

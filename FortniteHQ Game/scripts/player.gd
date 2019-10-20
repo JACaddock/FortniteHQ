@@ -50,7 +50,7 @@ func _physics_process(delta):
     else:
         if velocity.x > 0 and velocity.y < 0:
             anim_switch("Jump R")
-        elif velocity.y < 0:
+        elif velocity.x < 0:
             anim_switch("Jump L")
             
     velocity.y += GRAVITY + (delta * 10)
@@ -70,4 +70,4 @@ func anim_switch(animation):
 
 func _on_Hitbox_body_entered(body):
     if body.is_in_group("enemies"):
-        queue_free()
+        queue_free()       

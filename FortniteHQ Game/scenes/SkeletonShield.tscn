@@ -411,7 +411,7 @@ tracks/7/keys = {
 "values": [ Vector2( 1.61008, 0 ), Vector2( 1, 0 ), Vector2( 1, 0 ), Vector2( 1, 0 ), Vector2( 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=6]
 resource_name = "Walk R"
 length = 0.4
 loop = true
@@ -512,7 +512,7 @@ tracks/7/keys = {
 "values": [ Vector2( 1.61008, 0 ), Vector2( 1, 0 ), Vector2( 1, 0 ), Vector2( 1, 0 ), Vector2( 1, 0 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 38.3764, 100.244 )
 
 [node name="SkeletonShield" type="KinematicBody2D"]
@@ -530,11 +530,11 @@ frame = 12
 "anims/Stun L" = SubResource( 3 )
 "anims/Stun R" = SubResource( 4 )
 "anims/Walk L" = SubResource( 5 )
-"anims/Walk R" = SubResource( 7 )
+"anims/Walk R" = SubResource( 6 )
 
 [node name="Body" type="CollisionShape2D" parent="."]
 position = Vector2( 11.344, 29.622 )
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="Shield" type="CollisionPolygon2D" parent="."]
 position = Vector2( -1.25436, -0.418137 )

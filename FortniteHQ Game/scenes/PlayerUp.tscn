@@ -1,9 +1,9 @@
 [gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://scripts/player.gd" type="Script" id=1]
+[ext_resource path="res://scripts/PlayerUp.gd" type="Script" id=1]
 [ext_resource path="res://assets/spritesheets/MainRichCSS.png" type="Texture" id=2]
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=1]
 resource_name = "Attack L"
 length = 0.4
 loop = true
@@ -41,7 +41,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 50, 40 ) ]
+"values": [ Vector2( 0, 0 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Player:scale")
@@ -53,10 +53,10 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 1.2, 1.12 ) ]
+"values": [ Vector2( 1, 1 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Body:position")
+tracks/4/path = NodePath("body:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -65,10 +65,10 @@ tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 100, 0 ) ]
+"values": [ Vector2( 50, -45 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Body:scale")
+tracks/5/path = NodePath("body:scale")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -101,7 +101,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 100, 0 ) ]
+"values": [ Vector2( 50, -45 ) ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("Swipe:build_mode")
@@ -182,14 +182,13 @@ tracks/14/loop_wrap = true
 tracks/14/imported = false
 tracks/14/enabled = true
 tracks/14/keys = {
-"times": PoolRealArray( 0.1 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 100, 0 ) ]
+"values": [ Vector2( 50, 0 ), Vector2( 60, -30 ) ]
 }
 
-[sub_resource type="Animation" id=1]
-resource_name = "Attack R"
+[sub_resource type="Animation" id=2]
 length = 0.4
 loop = true
 tracks/0/type = "value"
@@ -241,7 +240,7 @@ tracks/3/keys = {
 "values": [ Vector2( 1.2, 1.12 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Body:position")
+tracks/4/path = NodePath("body:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -253,7 +252,7 @@ tracks/4/keys = {
 "values": [ Vector2( -10, 0 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Body:scale")
+tracks/5/path = NodePath("body:scale")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -373,7 +372,7 @@ tracks/14/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=3]
 resource_name = "Jump L"
 length = 0.5
 loop = true
@@ -426,7 +425,7 @@ tracks/3/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Body:position")
+tracks/4/path = NodePath("body:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -438,7 +437,7 @@ tracks/4/keys = {
 "values": [ Vector2( 10, 0 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Body:scale")
+tracks/5/path = NodePath("body:scale")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -474,8 +473,7 @@ tracks/7/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "Jump R"
+[sub_resource type="Animation" id=4]
 length = 0.5
 loop = true
 tracks/0/type = "value"
@@ -527,7 +525,7 @@ tracks/3/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Body:position")
+tracks/4/path = NodePath("body:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -539,7 +537,7 @@ tracks/4/keys = {
 "values": [ Vector2( -10, 0 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Body:scale")
+tracks/5/path = NodePath("body:scale")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -575,7 +573,7 @@ tracks/7/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=5]
 resource_name = "Still L"
 length = 0.1
 loop = true
@@ -628,7 +626,7 @@ tracks/3/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Body:position")
+tracks/4/path = NodePath("body:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -640,7 +638,7 @@ tracks/4/keys = {
 "values": [ Vector2( 10, 0 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Body:scale")
+tracks/5/path = NodePath("body:scale")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -676,8 +674,7 @@ tracks/7/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "Still R"
+[sub_resource type="Animation" id=6]
 length = 0.1
 loop = true
 tracks/0/type = "value"
@@ -729,7 +726,7 @@ tracks/3/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Body:position")
+tracks/4/path = NodePath("body:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -741,7 +738,7 @@ tracks/4/keys = {
 "values": [ Vector2( -10, 0 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Body:scale")
+tracks/5/path = NodePath("body:scale")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -777,7 +774,7 @@ tracks/7/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=7]
 resource_name = "Walk L"
 length = 0.7
 loop = true
@@ -830,7 +827,7 @@ tracks/3/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Body:position")
+tracks/4/path = NodePath("body:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -842,7 +839,7 @@ tracks/4/keys = {
 "values": [ Vector2( 10, 0 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Body:scale")
+tracks/5/path = NodePath("body:scale")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -878,8 +875,7 @@ tracks/7/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=4]
-resource_name = "Walk R"
+[sub_resource type="Animation" id=8]
 length = 0.7
 loop = true
 tracks/0/type = "value"
@@ -931,7 +927,7 @@ tracks/3/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Body:position")
+tracks/4/path = NodePath("body:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -943,7 +939,7 @@ tracks/4/keys = {
 "values": [ Vector2( -10, 0 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Body:scale")
+tracks/5/path = NodePath("body:scale")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -979,7 +975,7 @@ tracks/7/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 80, 280 )
 
 [node name="PlayerUp" type="KinematicBody2D"]
@@ -987,29 +983,32 @@ script = ExtResource( 1 )
 
 [node name="Player" type="Sprite" parent="."]
 texture = ExtResource( 2 )
+flip_h = true
 vframes = 2
 hframes = 9
-frame = 4
+frame = 14
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-"anims/Attack L" = SubResource( 6 )
-"anims/Attack R" = SubResource( 1 )
-"anims/Jump L" = SubResource( 7 )
-"anims/Jump R" = SubResource( 2 )
-"anims/Still L" = SubResource( 8 )
-"anims/Still R" = SubResource( 3 )
-"anims/Walk L" = SubResource( 9 )
-"anims/Walk R" = SubResource( 4 )
+"anims/Attack L" = SubResource( 1 )
+"anims/Attack R" = SubResource( 2 )
+"anims/Jump L" = SubResource( 3 )
+"anims/Jump R" = SubResource( 4 )
+"anims/Still L" = SubResource( 5 )
+"anims/Still R" = SubResource( 6 )
+"anims/Walk L" = SubResource( 7 )
+"anims/Walk R" = SubResource( 8 )
 
-[node name="Body" type="CollisionShape2D" parent="."]
-position = Vector2( -10, 0 )
-shape = SubResource( 5 )
+[node name="body" type="CollisionShape2D" parent="."]
+position = Vector2( 50, -45 )
+shape = SubResource( 9 )
 
 [node name="Sword" type="CollisionPolygon2D" parent="."]
+position = Vector2( 50, -45 )
+scale = Vector2( -1, 1 )
 polygon = PoolVector2Array( 90, 30, 210, 140, 210, 170, 180, 170, 60, 60 )
-disabled = true
 
 [node name="Swipe" type="CollisionPolygon2D" parent="."]
 visible = false
+position = Vector2( 50, 0 )
+scale = Vector2( -1, 1 )
 polygon = PoolVector2Array( 390, -250, 330, -170, 290, -100, 220, -40, 180, -10, 50, 0, 160, 90, 250, 70, 320, 30, 360, -60, 390, -190 )
-disabled = true
