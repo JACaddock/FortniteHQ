@@ -1,0 +1,113 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/SmallSlime.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/SmallSlimeQ.gd" type="Script" id=3]
+[ext_resource path="res://scenes/King Slime.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/King SlimeQ.gd" type="Script" id=5]
+[ext_resource path="res://assets/ENVIRONMENT/burning_town_back.png" type="Texture" id=6]
+[ext_resource path="res://assets/ENVIRONMENT/town-forest_transition_back.png" type="Texture" id=7]
+[ext_resource path="res://assets/ENVIRONMENT/slime_forest_back.png" type="Texture" id=8]
+[ext_resource path="res://assets/ENVIRONMENT/cave_entrance_back.png" type="Texture" id=9]
+[ext_resource path="res://assets/ENVIRONMENT/cave_back.png" type="Texture" id=10]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 3950, 40 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 530, 30 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 130, 20 )
+
+[node name="STown" type="Node2D"]
+
+[node name="PlayerPlat" type="StaticBody2D" parent="."]
+position = Vector2( 400, 440 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerPlat"]
+position = Vector2( 3480, 430 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="SlimePlat" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SlimePlat"]
+position = Vector2( 1610, 810 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="SlimePlat"]
+position = Vector2( 4060, 840 )
+shape = SubResource( 3 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 3470, 590 )
+scale = Vector2( 0.3, 0.3 )
+z_index = 6
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+current = true
+limit_left = 10
+limit_bottom = 880
+
+[node name="SmallSlime" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1810, 720 )
+scale = Vector2( 0.5, 0.5 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 3 )
+
+[node name="King Slime" parent="." instance=ExtResource( 4 )]
+position = Vector2( 3980, 620 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 5 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="SVill" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 810, 450 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="VilltWood" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 2370, 450 )
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Wood" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 3030, 0 )
+texture = ExtResource( 8 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="WoodtCave" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 5330, 450 )
+texture = ExtResource( 9 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Cave" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 6930, 450 )
+texture = ExtResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
