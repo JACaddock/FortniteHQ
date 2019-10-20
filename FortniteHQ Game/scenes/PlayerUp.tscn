@@ -41,11 +41,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-<<<<<<< HEAD
 "values": [ Vector2( 0, 0 ) ]
-=======
-"values": [ Vector2( -50, 30 ) ]
->>>>>>> 3ee09e694a1c879b39356aaa3e026d57e2f9c214
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Player:scale")
@@ -57,11 +53,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-<<<<<<< HEAD
 "values": [ Vector2( 1, 1 ) ]
-=======
-"values": [ Vector2( 1.1, 1.1 ) ]
->>>>>>> 3ee09e694a1c879b39356aaa3e026d57e2f9c214
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("body:position")
@@ -73,11 +65,7 @@ tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-<<<<<<< HEAD
 "values": [ Vector2( 50, -45 ) ]
-=======
-"values": [ Vector2( 0, -10 ) ]
->>>>>>> 3ee09e694a1c879b39356aaa3e026d57e2f9c214
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("body:scale")
@@ -113,11 +101,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-<<<<<<< HEAD
 "values": [ Vector2( 50, -45 ) ]
-=======
-"values": [ Vector2( 20, -20 ) ]
->>>>>>> 3ee09e694a1c879b39356aaa3e026d57e2f9c214
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("Swipe:build_mode")
@@ -201,11 +185,7 @@ tracks/14/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-<<<<<<< HEAD
 "values": [ Vector2( 50, 0 ), Vector2( 60, -30 ) ]
-=======
-"values": [ Vector2( 50, 0 ), Vector2( 50, 10 ) ]
->>>>>>> 3ee09e694a1c879b39356aaa3e026d57e2f9c214
 }
 
 [sub_resource type="Animation" id=2]
@@ -996,23 +976,20 @@ tracks/7/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 80, 280 )
+extents = Vector2( 100, 290 )
 
-[node name="PlayerUp" type="KinematicBody2D"]
+[node name="PlayerUp" type="KinematicBody2D" groups=[
+"player",
+]]
 script = ExtResource( 1 )
 
 [node name="Player" type="Sprite" parent="."]
-position = Vector2( -50, 30 )
-scale = Vector2( 1.1, 1.1 )
+position = Vector2( 50, 40 )
+scale = Vector2( 1.2, 1.12 )
 texture = ExtResource( 2 )
-flip_h = true
 vframes = 2
 hframes = 9
-<<<<<<< HEAD
 frame = 14
-=======
-frame = 17
->>>>>>> 3ee09e694a1c879b39356aaa3e026d57e2f9c214
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 "anims/Attack L" = SubResource( 1 )
@@ -1024,32 +1001,26 @@ frame = 17
 "anims/Walk L" = SubResource( 7 )
 "anims/Walk R" = SubResource( 8 )
 
-<<<<<<< HEAD
-[node name="body" type="CollisionShape2D" parent="."]
-position = Vector2( 50, -45 )
+[node name="body" type="CollisionShape2D" parent="." groups=[
+"player",
+]]
+position = Vector2( -10, 0 )
 shape = SubResource( 9 )
 
-[node name="Sword" type="CollisionPolygon2D" parent="."]
-position = Vector2( 50, -45 )
-scale = Vector2( -1, 1 )
+[node name="Sword" type="CollisionPolygon2D" parent="." groups=[
+"player",
+]]
 polygon = PoolVector2Array( 90, 30, 210, 140, 210, 170, 180, 170, 60, 60 )
 
-[node name="Swipe" type="CollisionPolygon2D" parent="."]
+[node name="Swipe" type="CollisionPolygon2D" parent="." groups=[
+"player",
+]]
 visible = false
-position = Vector2( 50, 0 )
-=======
-[node name="Body" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -10 )
-shape = SubResource( 5 )
-
-[node name="Sword" type="CollisionPolygon2D" parent="."]
-position = Vector2( 20, -20 )
-scale = Vector2( -1, 1 )
-polygon = PoolVector2Array( 210, -100, 390, -140, 400, -120, 390, -100, 230, -60 )
-
-[node name="Swipe" type="CollisionPolygon2D" parent="."]
-visible = false
-position = Vector2( 50, 2.2529 )
->>>>>>> 3ee09e694a1c879b39356aaa3e026d57e2f9c214
-scale = Vector2( -1, 1 )
 polygon = PoolVector2Array( 390, -250, 330, -170, 290, -100, 220, -40, 180, -10, 50, 0, 160, 90, 250, 70, 320, 30, 360, -60, 390, -190 )
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="body2" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2( -10, 0 )
+shape = SubResource( 9 )
+[connection signal="body_entered" from="Hitbox" to="." method="_on_Hitbox_body_entered"]

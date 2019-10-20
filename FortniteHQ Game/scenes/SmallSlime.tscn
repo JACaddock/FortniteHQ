@@ -161,7 +161,7 @@ tracks/5/keys = {
 extents = Vector2( 3084.18, 348.353 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 71.6597, 23.8313 )
+extents = Vector2( 64.9991, 13.0003 )
 
 [node name="SmallSlime" type="KinematicBody2D" groups=[
 "enemies",
@@ -199,6 +199,8 @@ collision_mask = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Head" groups=[
 "enemies",
 ]]
-position = Vector2( -88, -42 )
+position = Vector2( -88, -44 )
 shape = SubResource( 4 )
+[connection signal="body_entered" from="Detector" to="." method="_on_Detector_body_entered"]
+[connection signal="body_exited" from="Detector" to="." method="_on_Detector_body_exited"]
 [connection signal="body_entered" from="Head" to="." method="_on_Head_body_entered"]

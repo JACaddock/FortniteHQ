@@ -6,7 +6,8 @@
 [ext_resource path="res://assets/ENVIRONMENT/slime_forest_back.png" type="Texture" id=4]
 [ext_resource path="res://assets/ENVIRONMENT/cave_entrance_back.png" type="Texture" id=5]
 [ext_resource path="res://scenes/Frog Cutscene.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/PlayerUp.tscn" type="PackedScene" id=7]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 3870.59, 40 )
@@ -122,12 +123,12 @@ __meta__ = {
 position = Vector2( 6507, 1151.27 )
 scale = Vector2( 0.25, 0.25 )
 
-[node name="Player" parent="." instance=ExtResource( 7 )]
-position = Vector2( 148.402, 726.11 )
+[node name="PlayerUp" parent="." instance=ExtResource( 7 )]
+position = Vector2( 127.202, 641.309 )
 scale = Vector2( 0.3, 0.3 )
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2( 15.7435, 721.129 )
+[node name="Camera2D" type="Camera2D" parent="PlayerUp"]
+position = Vector2( 33.4105, 729.963 )
 scale = Vector2( 0.3, 0.3 )
 current = true
 limit_left = 10
