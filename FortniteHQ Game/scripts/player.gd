@@ -7,7 +7,7 @@ const GRAVITY = 10
 const FLOOR = Vector2(0, -1)
 var onGround = false
 var velocity = Vector2()
-#var direction = 1
+var direction
 var hasHealth = true
 var health = 2
 
@@ -34,9 +34,17 @@ func _physics_process(delta):
     get_input()
     
     if velocity.x != 0:
-        anim_switch("Walk")
-    else:
-        anim_switch("Still")
+	    if velocity.x > 0:
+        	anim_switch("Walk R")
+        	direction = 1
+	    else:
+		    anim_switch("Walk L")
+		    direction = -1
+    else: 
+	    if direction == 1:
+		    anim_switch("Still R")
+	    else:
+		    anim_switch("Still L")
         
     velocity.y += GRAVITY + (delta * 10)
     
