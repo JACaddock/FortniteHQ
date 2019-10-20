@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/goblin_boss-5.png-c040f3b65b32fee7c27d2b159affa52f.stex"
+path="res://.import/goblin_boss-5.png-c2fff0421eaa645038b53057c22cc9ca.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sprite Frames/goblin_boss/goblin_boss-5.png"
-dest_files=[ "res://.import/goblin_boss-5.png-c040f3b65b32fee7c27d2b159affa52f.stex" ]
+source_file="res://assets/Sprite Frames/goblin_boss_walk/goblin_boss/goblin_boss-5.png"
+dest_files=[ "res://.import/goblin_boss-5.png-c2fff0421eaa645038b53057c22cc9ca.stex" ]
 
 [params]
 

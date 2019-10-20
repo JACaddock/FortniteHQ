@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/backgrounds.png-7fc4d11178205f98073e79b999b91d65.stex"
+path="res://.import/GoblinSS.png-e5a9c5cada811c61bf2b9c79d8f6f1c0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/environment/backgrounds.png"
-dest_files=[ "res://.import/backgrounds.png-7fc4d11178205f98073e79b999b91d65.stex" ]
+source_file="res://assets/spritesheets/GoblinSS.png"
+dest_files=[ "res://.import/GoblinSS.png-e5a9c5cada811c61bf2b9c79d8f6f1c0.stex" ]
 
 [params]
 
