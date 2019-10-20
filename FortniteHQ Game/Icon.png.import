@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ninja-image.png-d56793e3601eefdb640f00567ef6abd0.stex"
+path="res://.import/Icon.png-33e63688031d53466d4d656c73cf10ca.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ninja-image.png"
-dest_files=[ "res://.import/ninja-image.png-d56793e3601eefdb640f00567ef6abd0.stex" ]
+source_file="res://Icon.png"
+dest_files=[ "res://.import/Icon.png-33e63688031d53466d4d656c73cf10ca.stex" ]
 
 [params]
 

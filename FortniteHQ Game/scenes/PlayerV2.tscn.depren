@@ -1,13 +1,15 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://scripts/PlayerUp.gd" type="Script" id=1]
+[ext_resource path="res://scripts/PlayerV2.gd" type="Script" id=1]
 [ext_resource path="res://assets/spritesheets/MainRichCSS.png" type="Texture" id=2]
+[ext_resource path="res://scripts/Hitbox.gd" type="Script" id=3]
+
 
 [sub_resource type="Animation" id=1]
 resource_name = "Attack L"
 length = 0.4
 tracks/0/type = "value"
-tracks/0/path = NodePath("Player:frame")
+tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -19,7 +21,7 @@ tracks/0/keys = {
 "values": [ 14, 15, 16, 17 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Player:flip_h")
+tracks/1/path = NodePath("Sprite:flip_h")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -31,7 +33,7 @@ tracks/1/keys = {
 "values": [ true ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Player:position")
+tracks/2/path = NodePath("Sprite:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -43,7 +45,7 @@ tracks/2/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Player:scale")
+tracks/3/path = NodePath("Sprite:scale")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -55,7 +57,7 @@ tracks/3/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("body:position")
+tracks/4/path = NodePath("Body:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -67,7 +69,7 @@ tracks/4/keys = {
 "values": [ Vector2( 50, -45 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("body:scale")
+tracks/5/path = NodePath("Body:scale")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -190,7 +192,7 @@ tracks/14/keys = {
 [sub_resource type="Animation" id=2]
 length = 0.4
 tracks/0/type = "value"
-tracks/0/path = NodePath("Player:frame")
+tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -202,7 +204,7 @@ tracks/0/keys = {
 "values": [ 14, 15, 16, 17 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Player:flip_h")
+tracks/1/path = NodePath("Sprite:flip_h")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -214,7 +216,7 @@ tracks/1/keys = {
 "values": [ false ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Player:position")
+tracks/2/path = NodePath("Sprite:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -226,7 +228,7 @@ tracks/2/keys = {
 "values": [ Vector2( 50, 40 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Player:scale")
+tracks/3/path = NodePath("Sprite:scale")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -238,7 +240,7 @@ tracks/3/keys = {
 "values": [ Vector2( 1.2, 1.12 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("body:position")
+tracks/4/path = NodePath("Body:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -250,7 +252,7 @@ tracks/4/keys = {
 "values": [ Vector2( -10, 0 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("body:scale")
+tracks/5/path = NodePath("Body:scale")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -375,7 +377,7 @@ resource_name = "Jump L"
 length = 0.5
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Player:frame")
+tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -387,7 +389,7 @@ tracks/0/keys = {
 "values": [ 9, 10, 11, 12, 13 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Player:flip_h")
+tracks/1/path = NodePath("Sprite:flip_h")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -399,7 +401,7 @@ tracks/1/keys = {
 "values": [ true ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Player:position")
+tracks/2/path = NodePath("Sprite:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -411,7 +413,7 @@ tracks/2/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Player:scale")
+tracks/3/path = NodePath("Sprite:scale")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -423,7 +425,7 @@ tracks/3/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("body:position")
+tracks/4/path = NodePath("Body:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -435,7 +437,7 @@ tracks/4/keys = {
 "values": [ Vector2( 10, 0 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("body:scale")
+tracks/5/path = NodePath("Body:scale")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -475,7 +477,7 @@ tracks/7/keys = {
 length = 0.5
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Player:frame")
+tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -487,7 +489,7 @@ tracks/0/keys = {
 "values": [ 9, 10, 11, 12, 13 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Player:flip_h")
+tracks/1/path = NodePath("Sprite:flip_h")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -499,7 +501,7 @@ tracks/1/keys = {
 "values": [ false ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Player:position")
+tracks/2/path = NodePath("Sprite:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -511,7 +513,7 @@ tracks/2/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Player:scale")
+tracks/3/path = NodePath("Sprite:scale")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -523,7 +525,7 @@ tracks/3/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("body:position")
+tracks/4/path = NodePath("Body:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -535,7 +537,7 @@ tracks/4/keys = {
 "values": [ Vector2( -10, 0 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("body:scale")
+tracks/5/path = NodePath("Body:scale")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -576,7 +578,7 @@ resource_name = "Still L"
 length = 0.1
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Player:frame")
+tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -588,7 +590,7 @@ tracks/0/keys = {
 "values": [ 7 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Player:flip_h")
+tracks/1/path = NodePath("Sprite:flip_h")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -600,7 +602,7 @@ tracks/1/keys = {
 "values": [ true ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Player:position")
+tracks/2/path = NodePath("Sprite:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -612,7 +614,7 @@ tracks/2/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Player:scale")
+tracks/3/path = NodePath("Sprite:scale")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -624,7 +626,7 @@ tracks/3/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("body:position")
+tracks/4/path = NodePath("Body:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -636,7 +638,7 @@ tracks/4/keys = {
 "values": [ Vector2( 10, 0 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("body:scale")
+tracks/5/path = NodePath("Body:scale")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -676,7 +678,7 @@ tracks/7/keys = {
 length = 0.1
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Player:frame")
+tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -688,7 +690,7 @@ tracks/0/keys = {
 "values": [ 7 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Player:flip_h")
+tracks/1/path = NodePath("Sprite:flip_h")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -700,7 +702,7 @@ tracks/1/keys = {
 "values": [ false ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Player:position")
+tracks/2/path = NodePath("Sprite:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -712,7 +714,7 @@ tracks/2/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Player:scale")
+tracks/3/path = NodePath("Sprite:scale")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -724,7 +726,7 @@ tracks/3/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("body:position")
+tracks/4/path = NodePath("Body:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -736,7 +738,7 @@ tracks/4/keys = {
 "values": [ Vector2( -10, 0 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("body:scale")
+tracks/5/path = NodePath("Body:scale")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -777,7 +779,7 @@ resource_name = "Walk L"
 length = 0.7
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Player:frame")
+tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -789,7 +791,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Player:flip_h")
+tracks/1/path = NodePath("Sprite:flip_h")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -801,7 +803,7 @@ tracks/1/keys = {
 "values": [ true ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Player:position")
+tracks/2/path = NodePath("Sprite:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -813,7 +815,7 @@ tracks/2/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Player:scale")
+tracks/3/path = NodePath("Sprite:scale")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -825,7 +827,7 @@ tracks/3/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("body:position")
+tracks/4/path = NodePath("Body:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -837,7 +839,7 @@ tracks/4/keys = {
 "values": [ Vector2( 10, 0 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("body:scale")
+tracks/5/path = NodePath("Body:scale")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -876,7 +878,7 @@ tracks/7/keys = {
 [sub_resource type="Animation" id=8]
 length = 0.7
 tracks/0/type = "value"
-tracks/0/path = NodePath("Player:frame")
+tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -888,7 +890,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Player:flip_h")
+tracks/1/path = NodePath("Sprite:flip_h")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -900,7 +902,7 @@ tracks/1/keys = {
 "values": [ false ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Player:position")
+tracks/2/path = NodePath("Sprite:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -912,7 +914,7 @@ tracks/2/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Player:scale")
+tracks/3/path = NodePath("Sprite:scale")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -924,7 +926,7 @@ tracks/3/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("body:position")
+tracks/4/path = NodePath("Body:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -936,7 +938,7 @@ tracks/4/keys = {
 "values": [ Vector2( -10, 0 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("body:scale")
+tracks/5/path = NodePath("Body:scale")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -975,12 +977,12 @@ tracks/7/keys = {
 [sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 100, 290 )
 
-[node name="PlayerUp" type="KinematicBody2D" groups=[
+[node name="PlayerV2" type="KinematicBody2D" groups=[
 "player",
 ]]
 script = ExtResource( 1 )
 
-[node name="Player" type="Sprite" parent="."]
+[node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 vframes = 2
 hframes = 9
@@ -996,7 +998,7 @@ frame = 7
 "anims/Walk L" = SubResource( 7 )
 "anims/Walk R" = SubResource( 8 )
 
-[node name="body" type="CollisionShape2D" parent="." groups=[
+[node name="Body" type="CollisionShape2D" parent="." groups=[
 "player",
 ]]
 visible = false
@@ -1021,4 +1023,5 @@ disabled = true
 [node name="body2" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2( -9, -13 )
 shape = SubResource( 9 )
+script = ExtResource( 3 )
 [connection signal="body_entered" from="Hitbox" to="." method="_on_Hitbox_body_entered"]

@@ -1,7 +1,9 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/environment/minecraftdirt.png" type="Texture" id=1]
-[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/PlayerV1.tscn" type="PackedScene" id=2]
+
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 200.404, 199.883 )

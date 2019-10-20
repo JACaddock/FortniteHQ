@@ -1,19 +1,19 @@
 [gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://scenes/SmallSlime.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scenes/King Slime.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/SlimeSmall.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/SlimeBoss.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/ENVIRONMENT/town-forest_transition_back.png" type="Texture" id=3]
 [ext_resource path="res://assets/ENVIRONMENT/slime_forest_back.png" type="Texture" id=4]
 [ext_resource path="res://assets/ENVIRONMENT/cave_entrance_back.png" type="Texture" id=5]
-[ext_resource path="res://scenes/Frog Cutscene.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scripts/entity.gd" type="Script" id=7]
+[ext_resource path="res://scenes/FrogV1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scripts/Entity.gd" type="Script" id=7]
 [ext_resource path="res://sounds/Well, you are a strong one aren't you.wav" type="AudioStream" id=8]
-[ext_resource path="res://scenes/PlayerUp001.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/PlayerV2.tscn" type="PackedScene" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 3870.59, 40 )
 
-[node name="STown" type="Node2D"]
+[node name="Level1" type="Node2D"]
 
 [node name="SmallSlime00" parent="." instance=ExtResource( 1 )]
 position = Vector2( 1130.45, 790 )
@@ -122,8 +122,6 @@ __meta__ = {
 [node name="Frog Cutscene" parent="." instance=ExtResource( 6 )]
 position = Vector2( 6720.84, 710.03 )
 scale = Vector2( 0.25, 0.25 )
-collision_layer = 0
-collision_mask = 0
 script = ExtResource( 7 )
 
 [node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="Frog Cutscene"]

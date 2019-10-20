@@ -14,11 +14,9 @@ var attacking = false
 func get_input():                
     if Input.is_action_pressed('ui_right'):
         velocity.x = speed
-        $Player.flip_h = false
         
     elif Input.is_action_pressed("ui_left"):
         velocity.x = -speed
-        $Player.flip_h = true
         
     else:
         velocity.x = 0
@@ -80,6 +78,6 @@ func anim_switch(animation):
     if $AnimationPlayer.current_animation != newanim:
         $AnimationPlayer.play(newanim)
 
-func _on_Hitbox_body_entered(body):
-    if body.is_in_group("enemies"):
+func _on_Hitbox_body_entered(Body):
+    if Body.is_in_group("enemies"):
         queue_free()
