@@ -9,6 +9,7 @@ var onGround = true
 var velocity = Vector2()
 var direction
 var hasHealth = true
+var attacking = false
 
 
 func get_input():                
@@ -32,7 +33,7 @@ func get_input():
 func _physics_process(delta):
     get_input()
     
-    if onGround:
+    if onGround and not attacking:
         if velocity.x != 0:
         	if velocity.x > 0:
                 anim_switch("Walk R")
