@@ -6,8 +6,13 @@ const FLOOR = Vector2(0, -1)
 var velocity = Vector2()
 var target
 var direction
-var hasHealth = true
-var health = 1
+var alive = true
+#var health = 1
+
+
+func _on_Detector_body_entered(body):
+    if body.is_in_group("player"):
+        target = body
         
 
 func _on_Detector_body_exited(body):
@@ -33,5 +38,9 @@ func movement_loop():
     
 
 func _physics_process(delta):
-    velocity.y += GRAVITY + (delta * 10)
-    movement_loop()
+    if alive:
+        velocity.y += GRAVITY + (delta * 10)
+        movement_loop()
+            
+    elif not $AnimationPlayer.is_playing():
+        queue_free()

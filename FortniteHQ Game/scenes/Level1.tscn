@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scenes/SlimeSmall.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/SlimeBoss.tscn" type="PackedScene" id=2]
@@ -6,73 +6,83 @@
 [ext_resource path="res://assets/ENVIRONMENT/slime_forest_back.png" type="Texture" id=4]
 [ext_resource path="res://assets/ENVIRONMENT/cave_entrance_back.png" type="Texture" id=5]
 [ext_resource path="res://scenes/FrogV1.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scripts/Entity.gd" type="Script" id=7]
+[ext_resource path="res://scripts/BasicEnemyAI.gd" type="Script" id=7]
 [ext_resource path="res://sounds/Well, you are a strong one aren't you.wav" type="AudioStream" id=8]
 [ext_resource path="res://scenes/PlayerV2.tscn" type="PackedScene" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 3870.59, 40 )
+extents = Vector2( 4856.38, 40 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 79.1042, 621.736 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 76.4473, 583.698 )
 
 [node name="Level1" type="Node2D"]
 
 [node name="SmallSlime00" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1130.45, 790 )
+position = Vector2( 1100.91, 974.038 )
 scale = Vector2( 0.25, 0.25 )
 
 [node name="SmallSlime01" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1452.54, 790 )
+position = Vector2( 1504.8, 967.221 )
 scale = Vector2( 0.25, 0.25 )
 
 [node name="SmallSlime02" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1357.34, 790 )
+position = Vector2( 1389.15, 967.222 )
 scale = Vector2( 0.25, 0.25 )
 
 [node name="SmallSlime03" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1249.45, 790 )
+position = Vector2( 1260.81, 969.494 )
 scale = Vector2( 0.25, 0.25 )
 
 [node name="SmallSlime04" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1700, 790 )
+position = Vector2( 1704.54, 971.766 )
 scale = Vector2( 0.25, 0.25 )
 
 [node name="SmallSlime05" parent="." instance=ExtResource( 1 )]
-position = Vector2( 2413.98, 786.746 )
+position = Vector2( 2654.82, 975.328 )
 scale = Vector2( 0.25, 0.25 )
 
 [node name="SmallSlime06" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1885.7, 790 )
+position = Vector2( 1897.06, 971.766 )
 scale = Vector2( 0.25, 0.25 )
 
 [node name="SmallSlime07" parent="." instance=ExtResource( 1 )]
-position = Vector2( 2226.84, 790 )
+position = Vector2( 2408.61, 974.038 )
 scale = Vector2( 0.25, 0.25 )
 
 [node name="SmallSlime08" parent="." instance=ExtResource( 1 )]
-position = Vector2( 2099.9, 790 )
+position = Vector2( 2193.06, 974.038 )
 scale = Vector2( 0.25, 0.25 )
 
 [node name="King Slime" parent="." instance=ExtResource( 2 )]
-position = Vector2( 5456.3, 596.746 )
+position = Vector2( 5451.76, 810.321 )
 collision_layer = 3
 collision_mask = 3
 
 [node name="LevelBackground" type="ParallaxBackground" parent="."]
+editor/display_folded = true
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="LevelBackground"]
 editor/display_folded = true
 __meta__ = {
+"_edit_group_": true,
 "_edit_lock_": true
 }
 
 [node name="VilltWood" type="Sprite" parent="LevelBackground/ParallaxLayer"]
-position = Vector2( 807, 450 )
+position = Vector2( 965, 540 )
+scale = Vector2( 1.2, 1.2 )
 texture = ExtResource( 3 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Wood00" type="Sprite" parent="LevelBackground/ParallaxLayer"]
-position = Vector2( 1467, 0 )
+position = Vector2( 1925, 0 )
+scale = Vector2( 1.2, 1.2 )
 texture = ExtResource( 4 )
 centered = false
 __meta__ = {
@@ -80,7 +90,8 @@ __meta__ = {
 }
 
 [node name="Wood01" type="Sprite" parent="LevelBackground/ParallaxLayer"]
-position = Vector2( 2982, 0 )
+position = Vector2( 3798, 0 )
+scale = Vector2( 1.2, 1.2 )
 texture = ExtResource( 4 )
 centered = false
 __meta__ = {
@@ -88,7 +99,8 @@ __meta__ = {
 }
 
 [node name="Wood02" type="Sprite" parent="LevelBackground/ParallaxLayer"]
-position = Vector2( 4500, 0 )
+position = Vector2( 5717.65, 0 )
+scale = Vector2( 1.2, 1.2 )
 texture = ExtResource( 4 )
 centered = false
 __meta__ = {
@@ -96,7 +108,8 @@ __meta__ = {
 }
 
 [node name="WoodtCave" type="Sprite" parent="LevelBackground/ParallaxLayer"]
-position = Vector2( 6819, 450 )
+position = Vector2( 8574.65, 540 )
+scale = Vector2( 1.2, 1.2 )
 texture = ExtResource( 5 )
 __meta__ = {
 "_edit_lock_": true
@@ -104,7 +117,6 @@ __meta__ = {
 
 [node name="PlayerPlat" type="StaticBody2D" parent="LevelBackground"]
 editor/display_folded = true
-visible = false
 position = Vector2( 400, 440 )
 __meta__ = {
 "_edit_group_": true,
@@ -112,15 +124,44 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelBackground/PlayerPlat"]
-visible = false
-position = Vector2( 3400, 430 )
+position = Vector2( 4242, 613 )
 shape = SubResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="LWall" type="StaticBody2D" parent="LevelBackground"]
+editor/display_folded = true
+position = Vector2( -48.9061, 1010.73 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelBackground/LWall"]
+position = Vector2( -32.6041, -543.401 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="RWall" type="StaticBody2D" parent="LevelBackground"]
+editor/display_folded = true
+position = Vector2( 9531.25, 548.835 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelBackground/RWall"]
+position = Vector2( -4, 0 )
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
 [node name="Frog Cutscene" parent="." instance=ExtResource( 6 )]
-position = Vector2( 6720.84, 710.03 )
+position = Vector2( 7161.62, 894.068 )
 scale = Vector2( 0.25, 0.25 )
 script = ExtResource( 7 )
 
@@ -130,18 +171,19 @@ volume_db = 6.0
 autoplay = true
 
 [node name="PlayerV2" parent="." instance=ExtResource( 9 )]
-position = Vector2( 3939.07, 742.389 )
+position = Vector2( 78.5176, 923.983 )
 scale = Vector2( 0.3, 0.3 )
 
 [node name="Camera2D" type="Camera2D" parent="PlayerV2"]
-position = Vector2( -29.3634, -9.78748 )
-offset = Vector2( 0, -400 )
+position = Vector2( 0, -6.66675 )
 current = true
 limit_left = 10
-limit_top = 100
-limit_right = 7600
-limit_bottom = 10
+limit_top = 10
+limit_right = 9500
+limit_bottom = 800
 limit_smoothed = true
 smoothing_enabled = true
 drag_margin_left = 0.0
+drag_margin_top = 0.0
 drag_margin_right = 0.0
+drag_margin_bottom = 0.0

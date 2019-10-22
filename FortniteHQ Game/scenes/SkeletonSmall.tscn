@@ -3,8 +3,6 @@
 [ext_resource path="res://scripts/SkeletonSmall.gd" type="Script" id=1]
 [ext_resource path="res://assets/spritesheets/SkeletonSS.png" type="Texture" id=2]
 
-
-
 [sub_resource type="Animation" id=1]
 resource_name = "Attack L"
 length = 0.5

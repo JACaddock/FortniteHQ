@@ -210,7 +210,7 @@ tracks/3/keys = {
 "values": [ PoolVector2Array( -48.5136, -14.7823, -74.9841, 11.6881, -95.1521, 50.1334, -93.8916, 110.007, -65.6801, 200.066, 232.226, 199.292, 174.192, 148.222, 137.051, 97.9266, 114.611, 43.7619, 92.9451, -5.76009, 68.1841, -17.3668, 39.7213, -29.2781, 37.2003, -99.8661, -16.3709, -99.8661, -15.7406, -30.5386 ), PoolVector2Array( -61.5975, -11.74, -94.0875, 14.4325, -116.65, 59.5575, -116.65, 125.44, -65.6801, 200.066, 232.226, 199.292, 145.978, 152.515, 117.098, 108.292, 94.535, 62.265, 70.1675, 6.30998, 14.2125, -18.96, 9.70001, -84.8425, -44.45, -81.2325, -46.255, -19.8625 ), PoolVector2Array( -68.8175, -27.985, -94.0875, -3.61752, -122.065, 44.215, -122.967, 100.17, -109.43, 162.442, -84.16, 199.445, 232.226, 199.292, 143.27, 147.1, 112.585, 95.6575, 95.4375, 50.5325, 70.1675, 6.30998, 38.58, -34.3025, 5.1875, -37.9125, 5.1875, -89.355, -47.1575, -91.16, -47.1575, -39.7175 ), PoolVector2Array( -64.305, -37.9125, -89.575, -15.35, -116.65, 33.385, -117.552, 92.0475, -107.625, 158.832, -84.16, 199.445, 232.226, 199.292, 157.71, 137.172, 119.805, 82.12, 98.145, 29.775, 67.46, -26.18, 45.8, -44.23, 13.31, -51.45, 14.2125, -100.185, -40.84, -101.088, -39.035, -50.5475 ) ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=5]
 resource_name = "Damage"
 length = 0.42
 tracks/0/type = "value"
@@ -226,7 +226,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 0.905882, 0.172549, 0.172549, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 1136.28, 234.896 )
 
 [node name="SlimeBoss" type="KinematicBody2D" groups=[
@@ -259,13 +259,13 @@ polygon = PoolVector2Array( -64.305, -37.9125, -89.575, -15.35, -116.65, 33.385,
 "anims/Walk R" = SubResource( 4 )
 
 [node name="EffectsPlayer" type="AnimationPlayer" parent="."]
-anims/Damage = SubResource( 6 )
+anims/Damage = SubResource( 5 )
 
 [node name="Detector" type="Area2D" parent="."]
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="Jumper" type="Timer" parent="."]
 autostart = true

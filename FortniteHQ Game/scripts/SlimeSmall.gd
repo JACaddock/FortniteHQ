@@ -3,6 +3,7 @@ extends KinematicBody2D
 
 const GRAVITY = 10
 const FLOOR = Vector2(0, -1)
+const SPEED = 50
 var velocity = Vector2()
 var target
 var direction
@@ -24,12 +25,12 @@ func movement_loop():
     if target != null and target.position.x < position.x:
         $AnimationPlayer.play("Walk L")
         direction = -1
-        velocity.x = (position.x - $Body.position.x) * 0.05 * direction
+        velocity.x = SPEED * direction
         
     elif target != null and target.position.x > position.x:
         $AnimationPlayer.play("Walk R")
         direction = 1
-        velocity.x = ( position.x - $Body.position.x) * 0.05 * direction
+        velocity.x = SPEED * direction
         
     else:
         velocity.x = 0
