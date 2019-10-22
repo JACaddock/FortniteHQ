@@ -127,8 +127,12 @@ func _set_health(value):
             
 
 func _on_IFrames_timeout():
-    effectsplayer.play("Rest")
+    $EffectsPlayer.stop()
 
 
 func _on_SwordSwing_timeout():
     attacking = false
+
+
+func _on_SwordArea_body_entered(body):
+    body.damage(1)

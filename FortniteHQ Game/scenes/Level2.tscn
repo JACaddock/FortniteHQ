@@ -17,7 +17,6 @@ extents = Vector2( 93.2949, 566 )
 [node name="Level2" type="Node2D"]
 
 [node name="LevelBackground" type="ParallaxBackground" parent="."]
-editor/display_folded = true
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="LevelBackground"]
 editor/display_folded = true
@@ -82,6 +81,9 @@ __meta__ = {
 }
 
 [node name="PlayerPlat" type="StaticBody2D" parent="LevelBackground"]
+editor/display_folded = true
+collision_layer = 8
+collision_mask = 19
 __meta__ = {
 "_edit_lock_": true
 }
@@ -96,6 +98,8 @@ __meta__ = {
 [node name="LWall" type="StaticBody2D" parent="LevelBackground"]
 editor/display_folded = true
 position = Vector2( -105, 558 )
+collision_layer = 4
+collision_mask = 19
 __meta__ = {
 "_edit_lock_": true
 }
@@ -109,6 +113,8 @@ __meta__ = {
 [node name="RWall" type="StaticBody2D" parent="LevelBackground"]
 editor/display_folded = true
 position = Vector2( 13021.7, 471.364 )
+collision_layer = 4
+collision_mask = 19
 __meta__ = {
 "_edit_lock_": true
 }
@@ -136,7 +142,7 @@ drag_margin_left = 0.0
 drag_margin_right = 0.0
 
 [node name="GoblinSmall00" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1937.93, 940.585 )
+position = Vector2( 1155.01, 908.629 )
 scale = Vector2( 0.5, 0.5 )
 
 [node name="GoblinSmall01" parent="." instance=ExtResource( 4 )]

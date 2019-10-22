@@ -42,7 +42,7 @@ func _physics_process(delta):
     if alive:
         velocity.y += GRAVITY + (delta * 10)
         movement_loop()
-            
+
     elif not $AnimationPlayer.is_playing():
         queue_free()
 
