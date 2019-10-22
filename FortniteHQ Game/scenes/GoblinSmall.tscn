@@ -3,9 +3,6 @@
 [ext_resource path="res://scripts/GoblinSmall.gd" type="Script" id=1]
 [ext_resource path="res://assets/spritesheets/GoblinSS.png" type="Texture" id=2]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 96.8173, 180.157 )
-
 [sub_resource type="Animation" id=2]
 resource_name = "Attack L"
 length = 0.4
@@ -362,6 +359,21 @@ tracks/1/keys = {
 "update": 1,
 "values": [ true, false ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:collision_layer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 96.8173, 180.157 )
 
 [sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 65.1734, 53.5054 )
@@ -377,19 +389,12 @@ collision_mask = 3
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 0.9906, 0.965349, 0.965349, 1 )
 position = Vector2( 0, -2.78943 )
 texture = ExtResource( 2 )
 vframes = 3
 hframes = 4
 frame = 5
-
-[node name="Body" type="CollisionShape2D" parent="." groups=[
-"enemies",
-]]
-visible = false
-position = Vector2( -5.70575, 19.4091 )
-scale = Vector2( 1, 0.96 )
-shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 "anims/Attack L" = SubResource( 2 )
@@ -403,12 +408,21 @@ shape = SubResource( 1 )
 anims/Damage = SubResource( 10 )
 anims/Death = SubResource( 11 )
 
+[node name="Body" type="CollisionShape2D" parent="." groups=[
+"enemies",
+]]
+visible = false
+position = Vector2( -5.70575, 19.4091 )
+scale = Vector2( 1, 0.96 )
+shape = SubResource( 1 )
+
 [node name="Punch" type="CollisionShape2D" parent="."]
 visible = false
 position = Vector2( -6.81427, 10.3106 )
 shape = SubResource( 8 )
 
 [node name="Detector" type="Area2D" parent="."]
+editor/display_folded = true
 visible = false
 monitorable = false
 __meta__ = {
@@ -428,5 +442,3 @@ wait_time = 0.4
 one_shot = true
 [connection signal="body_entered" from="Detector" to="." method="_on_Detector_body_entered"]
 [connection signal="body_exited" from="Detector" to="." method="_on_Detector_body_exited"]
-[connection signal="timeout" from="Cooldown" to="." method="_on_Cooldown_timeout"]
-[connection signal="timeout" from="IFrames" to="." method="_on_IFrames_timeout"]
