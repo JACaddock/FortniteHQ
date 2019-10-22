@@ -3,7 +3,7 @@ extends KinematicBody2D
 
 const GRAVITY = 10
 const FLOOR = Vector2(0, -1)
-const SPEED = 50
+var SPEED = 40
 var velocity = Vector2()
 var target
 var direction

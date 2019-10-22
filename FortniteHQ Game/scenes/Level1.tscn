@@ -1,14 +1,13 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/SlimeSmall.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scenes/SlimeBoss.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/ENVIRONMENT/town-forest_transition_back.png" type="Texture" id=3]
-[ext_resource path="res://assets/ENVIRONMENT/slime_forest_back.png" type="Texture" id=4]
-[ext_resource path="res://assets/ENVIRONMENT/cave_entrance_back.png" type="Texture" id=5]
-[ext_resource path="res://scenes/FrogV1.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scripts/BasicEnemyAI.gd" type="Script" id=7]
-[ext_resource path="res://sounds/Well, you are a strong one aren't you.wav" type="AudioStream" id=8]
-[ext_resource path="res://scenes/PlayerV2.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/ENVIRONMENT/town-forest_transition_back.png" type="Texture" id=2]
+[ext_resource path="res://assets/ENVIRONMENT/slime_forest_back.png" type="Texture" id=3]
+[ext_resource path="res://assets/ENVIRONMENT/cave_entrance_back.png" type="Texture" id=4]
+[ext_resource path="res://scenes/FrogV1.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scripts/BasicEnemyAI.gd" type="Script" id=6]
+[ext_resource path="res://sounds/Well, you are a strong one aren't you.wav" type="AudioStream" id=7]
+[ext_resource path="res://scenes/PlayerV2.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 4856.38, 40 )
@@ -57,11 +56,6 @@ scale = Vector2( 0.25, 0.25 )
 position = Vector2( 2193.06, 974.038 )
 scale = Vector2( 0.25, 0.25 )
 
-[node name="King Slime" parent="." instance=ExtResource( 2 )]
-position = Vector2( 5451.76, 810.321 )
-collision_layer = 3
-collision_mask = 3
-
 [node name="LevelBackground" type="ParallaxBackground" parent="."]
 editor/display_folded = true
 
@@ -75,7 +69,7 @@ __meta__ = {
 [node name="VilltWood" type="Sprite" parent="LevelBackground/ParallaxLayer"]
 position = Vector2( 965, 540 )
 scale = Vector2( 1.2, 1.2 )
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -83,7 +77,7 @@ __meta__ = {
 [node name="Wood00" type="Sprite" parent="LevelBackground/ParallaxLayer"]
 position = Vector2( 1925, 0 )
 scale = Vector2( 1.2, 1.2 )
-texture = ExtResource( 4 )
+texture = ExtResource( 3 )
 centered = false
 __meta__ = {
 "_edit_lock_": true
@@ -92,7 +86,7 @@ __meta__ = {
 [node name="Wood01" type="Sprite" parent="LevelBackground/ParallaxLayer"]
 position = Vector2( 3798, 0 )
 scale = Vector2( 1.2, 1.2 )
-texture = ExtResource( 4 )
+texture = ExtResource( 3 )
 centered = false
 __meta__ = {
 "_edit_lock_": true
@@ -101,7 +95,7 @@ __meta__ = {
 [node name="Wood02" type="Sprite" parent="LevelBackground/ParallaxLayer"]
 position = Vector2( 5717.65, 0 )
 scale = Vector2( 1.2, 1.2 )
-texture = ExtResource( 4 )
+texture = ExtResource( 3 )
 centered = false
 __meta__ = {
 "_edit_lock_": true
@@ -110,7 +104,7 @@ __meta__ = {
 [node name="WoodtCave" type="Sprite" parent="LevelBackground/ParallaxLayer"]
 position = Vector2( 8574.65, 540 )
 scale = Vector2( 1.2, 1.2 )
-texture = ExtResource( 5 )
+texture = ExtResource( 4 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -160,18 +154,18 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Frog Cutscene" parent="." instance=ExtResource( 6 )]
+[node name="Frog Cutscene" parent="." instance=ExtResource( 5 )]
 position = Vector2( 7161.62, 894.068 )
 scale = Vector2( 0.25, 0.25 )
-script = ExtResource( 7 )
+script = ExtResource( 6 )
 
 [node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="Frog Cutscene"]
-stream = ExtResource( 8 )
+stream = ExtResource( 7 )
 volume_db = 6.0
 autoplay = true
 
-[node name="PlayerV2" parent="." instance=ExtResource( 9 )]
-position = Vector2( 78.5176, 923.983 )
+[node name="PlayerV2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 71.7017, 923.983 )
 scale = Vector2( 0.3, 0.3 )
 
 [node name="Camera2D" type="Camera2D" parent="PlayerV2"]

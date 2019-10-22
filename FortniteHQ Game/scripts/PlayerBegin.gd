@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var speed = 200
+var speed
 #const scene_up = Vector2(0, -1)
 const JUMP_POWER = -250
 const GRAVITY = 10
