@@ -42,7 +42,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 50, -45 ) ]
+"values": [ Vector2( 17.2721, -7.237 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Body:scale")
@@ -63,10 +63,10 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 0.1, 0.3 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ PoolVector2Array( 90, 30, 210, 140, 210, 170, 180, 170, 60, 60 ), PoolVector2Array( 230, -180, 350, -290, 380, -290, 382.796, -263.789, 382.796, -192.191, 345.565, -57.5853, 289.718, 56.9725, 168, 91.3398, 66.3303, 5.42151, 213.823, -33.2418, 256.783, -150.663 ), PoolVector2Array( 210, -100, 390, -140, 400, -120, 390, -100, 230, -60 ) ]
+"values": [ PoolVector2Array( 90, 30, 210, 140, 210, 170, 180, 170, 60, 60 ), PoolVector2Array( 230, -180, 350, -290, 380, -290, 382.796, -263.789, 382.796, -192.191, 345.565, -57.5853, 289.718, 56.9725, 168, 91.3398, 66.3303, 5.42151, 213.823, -33.2418, 256.783, -150.663 ), PoolVector2Array( 230, -180, 350, -290, 380, -290, 382.796, -263.789, 256.783, -150.663 ), PoolVector2Array( 210, -100, 390, -140, 400, -120, 390, -100, 230, -60 ) ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("Sword:position")
@@ -78,7 +78,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ Vector2( 50, -45 ), Vector2( 22.7925, 3.68707 ) ]
+"values": [ Vector2( 12.2369, 2.83313 ), Vector2( 22.7925, 3.68707 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("Sword:disabled")
@@ -186,10 +186,10 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 0.1, 0.3 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ PoolVector2Array( 90, 30, 210, 140, 210, 170, 180, 170, 60, 60 ), PoolVector2Array( 230, -180, 350, -290, 380, -290, 380, -260, 366.006, -88.2655, 291.544, 54.9317, 174.122, 90.731, 71.02, 6.24466, 270.064, -99.7213, 260, -150 ), PoolVector2Array( 210, -100, 390, -140, 400, -120, 390, -100, 230, -60 ) ]
+"values": [ PoolVector2Array( 90, 30, 210, 140, 210, 170, 180, 170, 60, 60 ), PoolVector2Array( 230, -180, 350, -290, 380, -290, 380, -260, 366.006, -88.2655, 291.544, 54.9317, 174.122, 90.731, 71.02, 6.24466, 270.064, -99.7213, 260, -150 ), PoolVector2Array( 230, -180, 350, -290, 380, -290, 380, -260, 260, -150 ), PoolVector2Array( 210, -100, 390, -140, 400, -120, 390, -100, 230, -60 ) ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("Sword:position")
@@ -201,7 +201,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ Vector2( 0, 0 ), Vector2( -25.7755, 1.43198 ) ]
+"values": [ Vector2( -12.5876, 5.03503 ), Vector2( -25.7755, 1.43198 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("Sword:disabled")
@@ -974,12 +974,12 @@ texture = ExtResource( 2 )
 flip_h = true
 vframes = 2
 hframes = 9
-frame = 17
+frame = 16
 
 [node name="Body" type="CollisionShape2D" parent="." groups=[
 "player",
 ]]
-position = Vector2( 50, -45 )
+position = Vector2( 17.2721, -7.237 )
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -1003,7 +1003,7 @@ anims/Rest = SubResource( 13 )
 ]]
 position = Vector2( 22.7925, 3.68707 )
 scale = Vector2( -1, 1 )
-polygon = PoolVector2Array( 210, -100, 390, -140, 400, -120, 390, -100, 230, -60 )
+polygon = PoolVector2Array( 230, -180, 350, -290, 380, -290, 382.796, -263.789, 256.783, -150.663 )
 
 [node name="IFrames" type="Timer" parent="."]
 wait_time = 0.88
