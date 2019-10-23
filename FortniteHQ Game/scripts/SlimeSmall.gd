@@ -47,6 +47,11 @@ func _physics_process(delta):
         queue_free()
 
 
+func damage(value):
+    alive = false
+    $AnimationPlayer.play("Dead")
+    
+
 func _on_Head_body_entered(body):
     if body.is_in_group("player"):
         alive = false
