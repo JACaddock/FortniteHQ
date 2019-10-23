@@ -13,6 +13,7 @@ var velocity = Vector2()
 var direction = 1
 var attacking = false
 var alive = true
+var strength = 1
 
 export (float) var max_health = 5
 onready var health = max_health setget _set_health
@@ -20,7 +21,7 @@ onready var IFrameTimer = $IFrames
 onready var effectsplayer = $EffectsPlayer
 
 func _ready():
-    $AnimationPlayer.play("Still R")
+    anim_switch("Still R")
     
 
 func get_input():                
@@ -86,7 +87,6 @@ func _physics_process(delta):
         else:
             onGround = false
     
-            
         velocity = move_and_slide( velocity, FLOOR )
                 
 
@@ -94,13 +94,8 @@ func anim_switch(animation):
     var newanim = str(animation)
     if $AnimationPlayer.current_animation != newanim:
         $AnimationPlayer.play(newanim)   
-    
-     
-func _on_Hitbox_body_entered(Body):
-    if Body.is_in_group("enemies"):
-        damage(1)
-        
-        
+      
+
 func damage(amount):
     if IFrameTimer.is_stopped():
         IFrameTimer.start()
@@ -135,4 +130,4 @@ func _on_SwordSwing_timeout():
 
 
 func _on_SwordArea_body_entered(body):
-    body.damage(1)
+    body.damage(strength)

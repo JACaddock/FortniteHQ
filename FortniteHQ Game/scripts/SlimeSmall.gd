@@ -42,12 +42,17 @@ func _physics_process(delta):
     if alive:
         velocity.y += GRAVITY + (delta * 10)
         movement_loop()
+        
+        for i in get_slide_count():
+            var collision = get_slide_collision(i)
+            if collision.collider_shape.is_in_group("player"):
+                collision.collider.damage(1)
 
     elif not $AnimationPlayer.is_playing():
         queue_free()
 
 
-func damage(value):
+func damage():
     alive = false
     $AnimationPlayer.play("Dead")
     

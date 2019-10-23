@@ -162,16 +162,16 @@ volume_db = 6.0
 autoplay = true
 
 [node name="PlayerV2" parent="." instance=ExtResource( 7 )]
-position = Vector2( 71.7017, 923.983 )
+position = Vector2( 136.213, 912.599 )
 scale = Vector2( 0.3, 0.3 )
 
 [node name="Camera2D" type="Camera2D" parent="PlayerV2"]
-position = Vector2( 0, -6.66675 )
+position = Vector2( 25.2987, 69.2283 )
 current = true
 limit_left = 10
 limit_top = 10
 limit_right = 9500
-limit_bottom = 800
+limit_bottom = 1000
 limit_smoothed = true
 smoothing_enabled = true
 drag_margin_left = 0.0

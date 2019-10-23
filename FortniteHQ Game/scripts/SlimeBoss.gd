@@ -9,8 +9,9 @@ var jump_power = -500
 var velocity = Vector2()
 var target
 var direction
-var onGround = true
+var onGround = false
 var cycle = 1
+var strength = 2
 
 var alive = true
 export (float) var max_health = 15
@@ -77,8 +78,8 @@ func _physics_process(delta):
             
         for i in get_slide_count():
             var collision = get_slide_collision(i)
-            if collision.collider_shape.is_in_group("weapon"):
-                damage(1)
+            if collision.collider_shape.is_in_group("player"):
+                collision.collider.damage(strength)
                 
     elif not $AnimationPlayer.is_playing():
         queue_free()
@@ -113,4 +114,3 @@ func _set_health(value):
         if health == 0:
             kill()
             emit_signal("killed")
-

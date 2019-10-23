@@ -262,6 +262,7 @@ polygon = PoolVector2Array( -53.2996, -60.6986, -85.0246, -32.0686, -96.6313, 1.
 anims/Damage = SubResource( 5 )
 
 [node name="Detector" type="Area2D" parent="."]
+editor/display_folded = true
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]

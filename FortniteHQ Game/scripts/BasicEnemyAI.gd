@@ -9,6 +9,9 @@ var speed = 10
 var velocity = Vector2()
 var target
 var direction
+var strength = 1
+var knockback = false
+var onGround = false
 
 var alive = true
 var max_health = 15
@@ -40,7 +43,13 @@ func movement_loop():
         elif not $AnimationPlayer.current_animation == "Attack L":
             anim_switch("Walk L")
             
-        direction = -1
+        if knockback:
+            direction = 1
+            if onGround:
+                velocity.y = -150
+        else:
+            direction = -1
+            
         velocity.x = speed * direction
         
     elif target != null and target.position.x > position.x:
@@ -50,7 +59,12 @@ func movement_loop():
         elif not $AnimationPlayer.current_animation == "Attack R":
             anim_switch("Walk R")
             
-        direction = 1
+        if knockback:
+            direction = -1
+            velocity.y = -100
+        else:
+            direction = 1
+            
         velocity.x = speed * direction
         
     else:
@@ -62,7 +76,21 @@ func movement_loop():
 func _physics_process(delta):
     if alive:
         velocity.y += GRAVITY + (delta * 10)
+        
+        if is_on_floor():
+            onGround = true
+        else:
+            onGround = false
+        
+        if $IFrames.is_stopped() and onGround:
+            knockback = false
+        
         movement_loop()
+        
+        for i in get_slide_count():
+            var collision = get_slide_collision(i)
+            if collision.collider_shape.is_in_group("player"):
+                collision.collider.damage(strength)
             
     elif not $AnimationPlayer.is_playing():
         queue_free()
@@ -76,6 +104,7 @@ func anim_switch(animation):
 
 func damage(amount):
     if $IFrames.is_stopped():
+        knockback = true
         $IFrames.start()
         _set_health(health - amount)
         $EffectsPlayer.play("Damage")

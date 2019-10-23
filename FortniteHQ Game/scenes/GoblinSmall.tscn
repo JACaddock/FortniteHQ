@@ -3,7 +3,7 @@
 [ext_resource path="res://scripts/GoblinSmall.gd" type="Script" id=1]
 [ext_resource path="res://assets/spritesheets/GoblinSS.png" type="Texture" id=2]
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 resource_name = "Attack L"
 length = 0.4
 tracks/0/type = "value"
@@ -55,7 +55,7 @@ tracks/3/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 resource_name = "Attack R"
 length = 0.4
 tracks/0/type = "value"
@@ -107,7 +107,7 @@ tracks/3/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 resource_name = "Still L"
 length = 0.8
 loop = true
@@ -172,7 +172,7 @@ tracks/4/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 resource_name = "Still R"
 length = 0.8
 loop = true
@@ -237,7 +237,7 @@ tracks/4/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=5]
 length = 0.8
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -276,7 +276,7 @@ tracks/2/keys = {
 "values": [ Vector2( -6.81427, 10.3106 ) ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=6]
 resource_name = "Walk R"
 length = 0.8
 tracks/0/type = "value"
@@ -316,7 +316,7 @@ tracks/2/keys = {
 "values": [ Vector2( -6.81427, 10.3106 ) ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=7]
 resource_name = "Damage"
 length = 0.45
 tracks/0/type = "value"
@@ -332,7 +332,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 0.8, 0.262745, 0.262745, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=8]
 resource_name = "Death"
 length = 0.34
 tracks/0/type = "value"
@@ -372,13 +372,13 @@ tracks/2/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 96.8173, 180.157 )
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 65.1734, 53.5054 )
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 2907.57, 443.603 )
 
 [node name="GoblinSmall" type="KinematicBody2D" groups=[
@@ -397,16 +397,16 @@ hframes = 4
 frame = 5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-"anims/Attack L" = SubResource( 2 )
-"anims/Attack R" = SubResource( 3 )
-"anims/Still L" = SubResource( 4 )
-"anims/Still R" = SubResource( 5 )
-"anims/Walk L" = SubResource( 6 )
-"anims/Walk R" = SubResource( 7 )
+"anims/Attack L" = SubResource( 1 )
+"anims/Attack R" = SubResource( 2 )
+"anims/Still L" = SubResource( 3 )
+"anims/Still R" = SubResource( 4 )
+"anims/Walk L" = SubResource( 5 )
+"anims/Walk R" = SubResource( 6 )
 
 [node name="EffectsPlayer" type="AnimationPlayer" parent="."]
-anims/Damage = SubResource( 10 )
-anims/Death = SubResource( 11 )
+anims/Damage = SubResource( 7 )
+anims/Death = SubResource( 8 )
 
 [node name="Body" type="CollisionShape2D" parent="." groups=[
 "enemies",
@@ -414,12 +414,12 @@ anims/Death = SubResource( 11 )
 visible = false
 position = Vector2( -5.70575, 19.4091 )
 scale = Vector2( 1, 0.96 )
-shape = SubResource( 1 )
+shape = SubResource( 9 )
 
 [node name="Punch" type="CollisionShape2D" parent="."]
 visible = false
 position = Vector2( -6.81427, 10.3106 )
-shape = SubResource( 8 )
+shape = SubResource( 10 )
 
 [node name="Detector" type="Area2D" parent="."]
 editor/display_folded = true
@@ -431,7 +431,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]
 position = Vector2( 0, -72 )
-shape = SubResource( 9 )
+shape = SubResource( 11 )
 
 [node name="Cooldown" type="Timer" parent="."]
 wait_time = 2.0

@@ -327,7 +327,7 @@ tracks/2/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=7]
 resource_name = "Damage"
 length = 0.45
 tracks/0/type = "value"
@@ -343,7 +343,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 0.788235, 0.270588, 0.270588, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=8]
 resource_name = "Death"
 length = 0.45
 tracks/0/type = "value"
@@ -383,10 +383,10 @@ tracks/2/keys = {
 "values": [ 2, 0 ]
 }
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 15.6675, 39.8205 )
 
-[sub_resource type="RectangleShape2D" id=14]
+[sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 1369.81, 170.452 )
 
 [node name="SkeletonSmall" type="KinematicBody2D" groups=[
@@ -412,8 +412,8 @@ frame = 5
 "anims/Walk R" = SubResource( 6 )
 
 [node name="EffectsPlayer" type="AnimationPlayer" parent="."]
-anims/Damage = SubResource( 15 )
-anims/Death = SubResource( 16 )
+anims/Damage = SubResource( 7 )
+anims/Death = SubResource( 8 )
 
 [node name="Body" type="CollisionPolygon2D" parent="." groups=[
 "enemies",
@@ -425,7 +425,7 @@ polygon = PoolVector2Array( -54.8328, -69.9055, 22.6002, -69.9055, 22.4868, 129.
 [node name="Sword" type="CollisionShape2D" parent="."]
 visible = false
 position = Vector2( -6.3175, 68.59 )
-shape = SubResource( 7 )
+shape = SubResource( 9 )
 
 [node name="Detector" type="Area2D" parent="."]
 editor/display_folded = true
@@ -436,7 +436,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]
 position = Vector2( 0, -35 )
-shape = SubResource( 14 )
+shape = SubResource( 10 )
 
 [node name="Cooldown" type="Timer" parent="."]
 
