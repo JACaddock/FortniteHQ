@@ -57,6 +57,7 @@ position = Vector2( 2193.06, 974.038 )
 scale = Vector2( 0.25, 0.25 )
 
 [node name="LevelBackground" type="ParallaxBackground" parent="."]
+editor/display_folded = true
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="LevelBackground"]
 __meta__ = {
@@ -153,6 +154,7 @@ __meta__ = {
 }
 
 [node name="Frog Cutscene" parent="." instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 7161.62, 894.068 )
 scale = Vector2( 0.25, 0.25 )
 
@@ -162,7 +164,7 @@ volume_db = 6.0
 autoplay = true
 
 [node name="PlayerV2" parent="." instance=ExtResource( 7 )]
-position = Vector2( 136.213, 912.599 )
+position = Vector2( 4466.24, 872.654 )
 scale = Vector2( 0.3, 0.3 )
 
 [node name="Camera2D" type="Camera2D" parent="PlayerV2"]
@@ -180,4 +182,4 @@ drag_margin_right = 0.0
 drag_margin_bottom = 0.0
 
 [node name="SlimeBoss" parent="." instance=ExtResource( 8 )]
-position = Vector2( 5071.03, 728.209 )
+position = Vector2( 5099.99, 804.104 )

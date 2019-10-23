@@ -1,25 +1,29 @@
 extends KinematicBody2D
 
 signal health_updated(health)
+signal max_health_updated(max_health)
 signal killed()
 
 const GRAVITY = 10
 const FLOOR = Vector2(0, -1)
+const SPEED = 30
 var jump_power = -500
 var velocity = Vector2()
 var target
-var direction
+var distance
 var onGround = false
-var cycle = 1
-var strength = 2
-
+var cycle = 0
 var alive = true
+
 export (float) var max_health = 15
+export (float) var strength = 2
+
 onready var health = max_health setget _set_health
 
 
 func _ready():
     $AnimationPlayer.play("Walk L")
+    emit_signal("max_health_updated", max_health)
            
         
 func _on_Detector_body_entered(body):
@@ -33,33 +37,48 @@ func _on_Detector_body_exited(body):
 
 
 func movement_loop(cycle):
-    if onGround:
-        if cycle == 1:
-            if target != null and target.position.x < position.x:
+    if onGround and target != null:
+        distance = position.x - target.position.x
+        if cycle == 0:
+            if distance > 0:
                 anim_switch("Walk L")
-                direction = -1
-                velocity.x = (position.x - $Body.position.x) * 0.005 * direction
-                
-            elif target != null and target.position.x > position.x:
+                velocity.x = -SPEED
+            elif distance < 0:
                 anim_switch("Walk R")
-                direction = 1
-                velocity.x = ( position.x - $Body.position.x) * 0.005 * direction
-                
+                velocity.x = SPEED             
             else:
                 velocity.x = 0
             
-        if cycle == -1:
-            jump_power = (rand_range(-6, -3)) * 100
-            if target != null and target.position.x < position.x:
+        elif cycle > 0:
+            jump_power = -600
+            if distance > 0:
                 anim_switch("Jump L")
-                direction = -1
-                velocity.x = (position.x - $Body.position.x) * 0.05 * direction
-            elif target != null and target.position.x > position.x:
+                if distance > 600: #Catch Up Jump
+                    velocity.x = -distance * 0.5
+                elif cycle == 1 and distance > 400 and distance < 600:  #Jump Over
+                    velocity.x = -distance
+                elif cycle == 2:  #Big Jump
+                    jump_power = -900
+                    velocity.x = -SPEED
+                elif cycle == 3:  #Random Jump
+                    jump_power = rand_range(3, 6) * -100
+                    velocity.x = -SPEED * 3
+                    
+            elif distance < 0:
                 anim_switch("Jump R")
-                direction = 1
-                velocity.x = ( position.x - $Body.position.x) * 0.05 * direction
-                
+                if -distance > 600: #Catch Up Jump
+                    velocity.x = -distance * 0.5
+                elif cycle == 1 and -distance > 400 and -distance < 600:  #Jump Over
+                    velocity.x = -distance
+                elif cycle == 2:  #Big Jump
+                    jump_power = -900
+                    velocity.x = SPEED
+                elif cycle == 3:  #Random Jump
+                    jump_power = rand_range(3, 6) * -100
+                    velocity.x = SPEED * 3
+
             velocity.y = jump_power
+            cycle = 0
             onGround = false
         
         
@@ -69,8 +88,8 @@ func movement_loop(cycle):
         onGround = false
         
     velocity = move_and_slide( velocity, FLOOR )
-
-
+    
+    
 func _physics_process(delta):
     if alive:
         velocity.y += GRAVITY + (delta * 10)
@@ -85,9 +104,9 @@ func _physics_process(delta):
         queue_free()
                 
 
-func _on_Jumper_timeout():
-    cycle *= -1
-    $Jumper.start(rand_range(1,5))
+func _on_CycleTimer_timeout():
+    cycle = rand_range(1, 3)
+    $CycleTimer.start(rand_range(5,11))
     
     
 func anim_switch(animation):
@@ -97,8 +116,10 @@ func anim_switch(animation):
       
     
 func damage(amount):
-    _set_health(health - amount)
-    $EffectsPlayer.play("Damage")
+    if $IFrames.is_stopped():
+        $IFrames.start()
+        _set_health(health - amount)
+        $EffectsPlayer.play("Damage")
           
 
 func kill():

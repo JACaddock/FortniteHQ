@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scripts/SlimeBoss.gd" type="Script" id=1]
 [ext_resource path="res://assets/spritesheets/KingSlimeSS.png" type="Texture" id=2]
+[ext_resource path="res://scenes/TempHealthBar.tscn" type="PackedScene" id=3]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Jump L"
@@ -233,6 +234,7 @@ extents = Vector2( 1136.28, 234.896 )
 "enemies",
 ]]
 script = ExtResource( 1 )
+max_health = 10.0
 
 [node name="Sprite" type="Sprite" parent="." groups=[
 "enemies",
@@ -268,8 +270,20 @@ visible = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]
 shape = SubResource( 6 )
 
-[node name="Jumper" type="Timer" parent="."]
+[node name="CycleTimer" type="Timer" parent="."]
 autostart = true
+
+[node name="TempHealthBar" parent="." instance=ExtResource( 3 )]
+margin_left = -107.924
+margin_top = -209.372
+margin_right = 6.07629
+margin_bottom = -209.372
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="IFrames" type="Timer" parent="."]
+one_shot = true
+[connection signal="health_updated" from="." to="TempHealthBar" method="_on_health_updated"]
+[connection signal="max_health_updated" from="." to="TempHealthBar" method="_on_max_health_updated"]
 [connection signal="body_entered" from="Detector" to="." method="_on_Detector_body_entered"]
 [connection signal="body_exited" from="Detector" to="." method="_on_Detector_body_exited"]
-[connection signal="timeout" from="Jumper" to="." method="_on_Jumper_timeout"]
+[connection signal="timeout" from="CycleTimer" to="." method="_on_CycleTimer_timeout"]

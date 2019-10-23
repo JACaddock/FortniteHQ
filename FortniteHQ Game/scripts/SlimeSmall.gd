@@ -52,9 +52,10 @@ func _physics_process(delta):
         queue_free()
 
 
-func damage():
-    alive = false
-    $AnimationPlayer.play("Dead")
+func damage(value):
+    if value > 0:
+        alive = false
+        $AnimationPlayer.play("Dead")
     
 
 func _on_Head_body_entered(body):

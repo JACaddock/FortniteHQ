@@ -2,9 +2,9 @@ extends KinematicBody2D
 
 
 signal health_updated(health)
+signal max_health_updated(max_health)
 signal killed()
 
-var speed = 200
 const JUMP_POWER = -300
 const GRAVITY = 10
 const FLOOR = Vector2(0, -1)
@@ -13,15 +13,18 @@ var velocity = Vector2()
 var direction = 1
 var attacking = false
 var alive = true
-var strength = 1
 
 export (float) var max_health = 5
+export (float) var strength = 2
+export (float) var speed = 200
+
 onready var health = max_health setget _set_health
 onready var IFrameTimer = $IFrames
 onready var effectsplayer = $EffectsPlayer
 
 func _ready():
     anim_switch("Still R")
+    emit_signal("max_health_updated", max_health)
     
 
 func get_input():                

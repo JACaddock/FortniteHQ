@@ -16,7 +16,7 @@ position = Vector2( 800, 360 )
 texture = ExtResource( 1 )
 
 [node name="Piece 00" type="Sprite" parent="."]
-visible = false
+editor/display_folded = true
 position = Vector2( 797.232, 773.146 )
 scale = Vector2( 7.63629, 0.5 )
 __meta__ = {

@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scripts/PlayerV2.gd" type="Script" id=1]
 [ext_resource path="res://assets/spritesheets/MainRichCSS.png" type="Texture" id=2]
+[ext_resource path="res://scenes/TempHealthBar.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 100, 290 )
@@ -115,6 +116,30 @@ tracks/8/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1.12, 1.12 ), Vector2( 1.12, 1.12 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("SwordArea/Sword:disabled")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 0.3, 0.393493 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ false, false, true ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("SwordArea:collision_mask")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 2, 2, 0 ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -238,6 +263,18 @@ tracks/9/keys = {
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 2, 0 ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("SwordArea/Sword:disabled")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 0.3, 0.391839 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, false, true ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -818,11 +855,12 @@ tracks/1/keys = {
 }
 
 [node name="PlayerV2" type="KinematicBody2D" groups=[
-"weapon",
 "player",
+"weapon",
 ]]
 collision_mask = 18
 script = ExtResource( 1 )
+max_health = 6.0
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 40, 42 )
@@ -865,7 +903,6 @@ one_shot = true
 [node name="SwordArea" type="Area2D" parent="." groups=[
 "weapon",
 ]]
-editor/display_folded = true
 collision_mask = 0
 
 [node name="Sword" type="CollisionPolygon2D" parent="SwordArea" groups=[
@@ -873,6 +910,16 @@ collision_mask = 0
 ]]
 position = Vector2( -25.7755, 1.43198 )
 polygon = PoolVector2Array( 210, -100, 390, -140, 400, -120, 390, -100, 230, -60 )
+disabled = true
+
+[node name="TempHealthBar" parent="." instance=ExtResource( 3 )]
+margin_left = -115.945
+margin_top = -344.483
+margin_right = -115.945
+margin_bottom = -344.483
+rect_scale = Vector2( 0.5, 0.5 )
+[connection signal="health_updated" from="." to="TempHealthBar" method="_on_health_updated"]
+[connection signal="max_health_updated" from="." to="TempHealthBar" method="_on_max_health_updated"]
 [connection signal="timeout" from="IFrames" to="." method="_on_IFrames_timeout"]
 [connection signal="timeout" from="SwordSwing" to="." method="_on_SwordSwing_timeout"]
 [connection signal="body_entered" from="SwordArea" to="." method="_on_SwordArea_body_entered"]
