@@ -717,6 +717,54 @@ tracks/5/keys = {
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
+tracks/6/type = "value"
+tracks/6/path = NodePath("Pivot:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -231.555, -56.99 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Pivot:rotation_degrees")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 180.0 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Pivot/CameraOffset/Camera2D:drag_margin_left")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Pivot/CameraOffset/Camera2D:drag_margin_right")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.2 ]
+}
 
 [sub_resource type="Animation" id=10]
 length = 0.7
@@ -792,6 +840,54 @@ tracks/5/keys = {
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
+tracks/6/type = "value"
+tracks/6/path = NodePath("Pivot:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 231.555, -56.9905 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Pivot:rotation_degrees")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Pivot/CameraOffset/Camera2D:drag_margin_left")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.2 ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Pivot/CameraOffset/Camera2D:drag_margin_right")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
 
 [sub_resource type="Animation" id=11]
 resource_name = "Damage"
@@ -855,20 +951,18 @@ tracks/1/keys = {
 }
 
 [node name="PlayerV2" type="KinematicBody2D" groups=[
-"player",
 "weapon",
+"player",
 ]]
+scale = Vector2( 0.1, 0.1 )
 collision_mask = 18
 script = ExtResource( 1 )
 max_health = 6.0
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 40, 42 )
-scale = Vector2( 1.12, 1.12 )
 texture = ExtResource( 2 )
 vframes = 2
 hframes = 9
-frame = 17
 
 [node name="Body" type="CollisionShape2D" parent="." groups=[
 "player",
@@ -903,6 +997,7 @@ one_shot = true
 [node name="SwordArea" type="Area2D" parent="." groups=[
 "weapon",
 ]]
+editor/display_folded = true
 collision_mask = 0
 
 [node name="Sword" type="CollisionPolygon2D" parent="SwordArea" groups=[
@@ -918,6 +1013,24 @@ margin_top = -344.483
 margin_right = -115.945
 margin_bottom = -344.483
 rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Pivot" type="Position2D" parent="."]
+editor/display_folded = true
+position = Vector2( 1.55469, -56.9905 )
+
+[node name="CameraOffset" type="Position2D" parent="Pivot"]
+position = Vector2( 150, 0 )
+
+[node name="Camera2D" type="Camera2D" parent="Pivot/CameraOffset"]
+current = true
+limit_left = 0
+limit_top = 0
+limit_right = 1585
+limit_bottom = 180
+limit_smoothed = true
+smoothing_enabled = true
+drag_margin_right = 0.0
+editor_draw_drag_margin = true
 [connection signal="health_updated" from="." to="TempHealthBar" method="_on_health_updated"]
 [connection signal="max_health_updated" from="." to="TempHealthBar" method="_on_max_health_updated"]
 [connection signal="timeout" from="IFrames" to="." method="_on_IFrames_timeout"]

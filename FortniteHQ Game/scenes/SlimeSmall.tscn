@@ -223,7 +223,7 @@ tracks/6/keys = {
 extents = Vector2( 3084.18, 348.353 )
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 56.0011, 13.0003 )
+extents = Vector2( 62.316, 20.0403 )
 
 [node name="SmallSlime" type="KinematicBody2D" groups=[
 "enemies",
@@ -233,7 +233,7 @@ script = ExtResource( 1 )
 [node name="Slime" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 hframes = 5
-frame = 4
+frame = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Dead = SubResource( 1 )
@@ -243,8 +243,7 @@ anims/Dead = SubResource( 1 )
 [node name="Body" type="CollisionPolygon2D" parent="." groups=[
 "enemies",
 ]]
-visible = false
-polygon = PoolVector2Array( -119.939, -47.3177, -155.778, -22.8825, -171.253, 2.36719, -170.439, 40.649, -148.447, 71.6002, -138.673, 117.213, 58.4374, 118.027, 11.196, 73.2292, -9.98114, 28.4314, -19.7552, -17.9955, -53.15, -49.7612 )
+polygon = PoolVector2Array( -99.5768, -50.5757, -147.633, -0.890839, -150.076, 46.3505, -114.238, 94.4064, -129.714, 118.027, 58.4374, 118.027, 37.2602, 87.0758, 17.7121, 51.2375, 5.49448, -9.0359, -31.1583, -49.7612 )
 
 [node name="Detector" type="Area2D" parent="."]
 editor/display_folded = true
@@ -260,11 +259,10 @@ position = Vector2( -70.6384, -178.22 )
 shape = SubResource( 4 )
 
 [node name="Head" type="Area2D" parent="."]
-visible = false
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Head"]
-position = Vector2( -96.25, -41.5 )
+position = Vector2( -70.75, -44 )
 shape = SubResource( 5 )
 [connection signal="body_entered" from="Detector" to="." method="_on_Detector_body_entered"]
 [connection signal="body_exited" from="Detector" to="." method="_on_Detector_body_exited"]

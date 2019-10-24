@@ -23,10 +23,6 @@ tracks/0/keys = {
 [node name="Title" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 0.698364
-margin_top = -1.39667
-margin_right = 795.698
-margin_bottom = 455.603
 script = ExtResource( 1 )
 
 [node name="Jello" type="Sprite" parent="."]
