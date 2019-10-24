@@ -5,7 +5,7 @@ signal health_updated(health)
 signal max_health_updated(max_health)
 signal killed()
 
-const JUMP_POWER = -300
+const JUMP_POWER = -200
 const GRAVITY = 10
 const FLOOR = Vector2(0, -1)
 var onGround = false
@@ -16,7 +16,7 @@ var alive = true
 
 export (float) var max_health = 5
 export (float) var strength = 2
-export (float) var speed = 200
+export (float) var speed = 100
 
 onready var health = max_health setget _set_health
 onready var IFrameTimer = $IFrames
@@ -133,4 +133,5 @@ func _on_SwordSwing_timeout():
 
 
 func _on_SwordArea_body_entered(body):
-    body.damage(strength)
+    if body.is_in_group("enemies"):
+        body.damage(strength)

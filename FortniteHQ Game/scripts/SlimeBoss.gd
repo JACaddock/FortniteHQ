@@ -6,8 +6,8 @@ signal killed()
 
 const GRAVITY = 10
 const FLOOR = Vector2(0, -1)
-const SPEED = 30
-var jump_power = -500
+const SPEED = 10
+var jump_power = -250
 var velocity = Vector2()
 var target
 var distance
@@ -50,42 +50,35 @@ func movement_loop(cycle):
                 velocity.x = 0
             
         elif cycle > 0:
-            jump_power = -600
+            jump_power = -300
             if distance > 0:
                 anim_switch("Jump L")
-                if distance > 600: #Catch Up Jump
+                if distance >= 200: #Catch Up Jump
                     velocity.x = -distance * 0.5
-                elif cycle == 1 and distance > 400 and distance < 600:  #Jump Over
-                    velocity.x = -distance
+                elif cycle == 1 and distance > 50 and distance < 200:  #Jump Over
+                    velocity.x = -distance * 2
                 elif cycle == 2:  #Big Jump
-                    jump_power = -900
-                    velocity.x = -SPEED
+                    jump_power = -450
+                    velocity.x = -SPEED * 5
                 elif cycle == 3:  #Random Jump
-                    jump_power = rand_range(3, 6) * -100
-                    velocity.x = -SPEED * 3
+                    jump_power = rand_range(3, 6) * -50
+                    velocity.x = -SPEED * 5
                     
             elif distance < 0:
                 anim_switch("Jump R")
-                if -distance > 600: #Catch Up Jump
+                if -distance > 300: #Catch Up Jump
                     velocity.x = -distance * 0.5
-                elif cycle == 1 and -distance > 400 and -distance < 600:  #Jump Over
-                    velocity.x = -distance
+                elif cycle == 1 and -distance > 100 and -distance < 300:  #Jump Over
+                    velocity.x = -distance * 2
                 elif cycle == 2:  #Big Jump
-                    jump_power = -900
-                    velocity.x = SPEED
+                    jump_power = -450
+                    velocity.x = SPEED * 5
                 elif cycle == 3:  #Random Jump
-                    jump_power = rand_range(3, 6) * -100
-                    velocity.x = SPEED * 3
-
+                    jump_power = rand_range(3, 6) * -50
+                    velocity.x = SPEED * 5
+            
             velocity.y = jump_power
-            cycle = 0
             onGround = false
-        
-        
-    if is_on_floor():
-        onGround = true
-    else:
-        onGround = false
         
     velocity = move_and_slide( velocity, FLOOR )
     
@@ -94,6 +87,12 @@ func _physics_process(delta):
     if alive:
         velocity.y += GRAVITY + (delta * 10)
         movement_loop(cycle)
+        
+        if is_on_floor():
+            cycle = 0
+            onGround = true
+        else:
+            onGround = false
             
         for i in get_slide_count():
             var collision = get_slide_collision(i)
@@ -105,8 +104,8 @@ func _physics_process(delta):
                 
 
 func _on_CycleTimer_timeout():
-    cycle = rand_range(1, 3)
-    $CycleTimer.start(rand_range(5,11))
+    cycle = randi()%3+1
+    $CycleTimer.start(rand_range(1,3))
     
     
 func anim_switch(animation):

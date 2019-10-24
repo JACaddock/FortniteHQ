@@ -273,15 +273,15 @@ shape = SubResource( 6 )
 [node name="CycleTimer" type="Timer" parent="."]
 autostart = true
 
+[node name="IFrames" type="Timer" parent="."]
+one_shot = true
+
 [node name="TempHealthBar" parent="." instance=ExtResource( 3 )]
 margin_left = -107.924
 margin_top = -209.372
 margin_right = 6.07629
 margin_bottom = -209.372
 rect_scale = Vector2( 0.5, 0.5 )
-
-[node name="IFrames" type="Timer" parent="."]
-one_shot = true
 [connection signal="health_updated" from="." to="TempHealthBar" method="_on_health_updated"]
 [connection signal="max_health_updated" from="." to="TempHealthBar" method="_on_max_health_updated"]
 [connection signal="body_entered" from="Detector" to="." method="_on_Detector_body_entered"]

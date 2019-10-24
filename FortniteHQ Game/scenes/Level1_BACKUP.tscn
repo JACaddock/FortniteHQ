@@ -1,100 +1,112 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/SlimeSmall.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/ENVIRONMENT/town-forest_transition_back.png" type="Texture" id=2]
 [ext_resource path="res://assets/ENVIRONMENT/slime_forest_back.png" type="Texture" id=3]
 [ext_resource path="res://assets/ENVIRONMENT/cave_entrance_back.png" type="Texture" id=4]
-[ext_resource path="res://scripts/RWall.gd" type="Script" id=5]
-[ext_resource path="res://scenes/FrogV1.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scripts/FrogV1.gd" type="Script" id=7]
-[ext_resource path="res://sounds/Well, you are a strong one aren't you.wav" type="AudioStream" id=8]
-[ext_resource path="res://scenes/PlayerV2.tscn" type="PackedScene" id=9]
-[ext_resource path="res://scenes/SlimeBoss.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/FrogV1.tscn" type="PackedScene" id=5]
+[ext_resource path="res://sounds/Well, you are a strong one aren't you.wav" type="AudioStream" id=6]
+[ext_resource path="res://scenes/PlayerV2.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/SlimeBoss.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 930.043, 40 )
+extents = Vector2( 4856.38, 40 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 50.3823, 319.606 )
+extents = Vector2( 79.1042, 621.736 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 51.6636, 237.128 )
+extents = Vector2( 76.4473, 583.698 )
 
 [node name="Level1" type="Node2D"]
 
 [node name="SmallSlime00" parent="." instance=ExtResource( 1 )]
-position = Vector2( 577.026, 136.092 )
-scale = Vector2( 0.1, 0.1 )
+position = Vector2( 1100.91, 974.038 )
+scale = Vector2( 0.25, 0.25 )
 
 [node name="SmallSlime01" parent="." instance=ExtResource( 1 )]
-position = Vector2( 902.495, 130.296 )
-scale = Vector2( 0.1, 0.1 )
+position = Vector2( 1504.8, 967.221 )
+scale = Vector2( 0.25, 0.25 )
 
 [node name="SmallSlime02" parent="." instance=ExtResource( 1 )]
-position = Vector2( 825.865, 129.255 )
-scale = Vector2( 0.1, 0.1 )
+position = Vector2( 1389.15, 967.222 )
+scale = Vector2( 0.25, 0.25 )
 
 [node name="SmallSlime03" parent="." instance=ExtResource( 1 )]
-position = Vector2( 773.673, 136.611 )
-scale = Vector2( 0.1, 0.1 )
+position = Vector2( 1260.81, 969.494 )
+scale = Vector2( 0.25, 0.25 )
 
 [node name="SmallSlime04" parent="." instance=ExtResource( 1 )]
-position = Vector2( 967.772, 136.778 )
-scale = Vector2( 0.1, 0.1 )
+position = Vector2( 1704.54, 971.766 )
+scale = Vector2( 0.25, 0.25 )
 
 [node name="SmallSlime05" parent="." instance=ExtResource( 1 )]
-position = Vector2( 328.032, 137.375 )
-scale = Vector2( 0.1, 0.1 )
+position = Vector2( 2654.82, 975.328 )
+scale = Vector2( 0.25, 0.25 )
 
 [node name="SmallSlime06" parent="." instance=ExtResource( 1 )]
-position = Vector2( 527.358, 136.379 )
-scale = Vector2( 0.1, 0.1 )
+position = Vector2( 1897.06, 971.766 )
+scale = Vector2( 0.25, 0.25 )
 
 [node name="SmallSlime07" parent="." instance=ExtResource( 1 )]
-position = Vector2( 455.839, 140.502 )
-scale = Vector2( 0.1, 0.1 )
+position = Vector2( 2408.61, 974.038 )
+scale = Vector2( 0.25, 0.25 )
 
 [node name="SmallSlime08" parent="." instance=ExtResource( 1 )]
-position = Vector2( 658.988, 136.783 )
-scale = Vector2( 0.1, 0.1 )
+position = Vector2( 2193.06, 974.038 )
+scale = Vector2( 0.25, 0.25 )
 
 [node name="LevelBackground" type="ParallaxBackground" parent="."]
+editor/display_folded = true
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="LevelBackground"]
-editor/display_folded = true
-position = Vector2( -160.237, -87.9119 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
 }
 
 [node name="VilltWood" type="Sprite" parent="LevelBackground/ParallaxLayer"]
-position = Vector2( 320.451, 178 )
-scale = Vector2( 0.2, 0.2 )
+position = Vector2( 965, 540 )
+scale = Vector2( 1.2, 1.2 )
 texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Wood00" type="Sprite" parent="LevelBackground/ParallaxLayer"]
-position = Vector2( 478.134, 88 )
-scale = Vector2( 0.2, 0.2 )
+position = Vector2( 1925, 0 )
+scale = Vector2( 1.2, 1.2 )
 texture = ExtResource( 3 )
 centered = false
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Wood01" type="Sprite" parent="LevelBackground/ParallaxLayer"]
-position = Vector2( 797, 88 )
-scale = Vector2( 0.2, 0.2 )
+position = Vector2( 3798, 0 )
+scale = Vector2( 1.2, 1.2 )
 texture = ExtResource( 3 )
 centered = false
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Wood02" type="Sprite" parent="LevelBackground/ParallaxLayer"]
-position = Vector2( 1113.5, 88 )
-scale = Vector2( 0.2, 0.2 )
+position = Vector2( 5717.65, 0 )
+scale = Vector2( 1.2, 1.2 )
 texture = ExtResource( 3 )
 centered = false
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="WoodtCave" type="Sprite" parent="LevelBackground/ParallaxLayer"]
-position = Vector2( 1591.72, 178 )
-scale = Vector2( 0.2, 0.2 )
+position = Vector2( 8574.65, 540 )
+scale = Vector2( 1.2, 1.2 )
 texture = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="PlayerPlat" type="StaticBody2D" parent="LevelBackground"]
 editor/display_folded = true
@@ -105,8 +117,11 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelBackground/PlayerPlat"]
-position = Vector2( 400, -220.7 )
+position = Vector2( 4242, 613 )
 shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="LWall" type="StaticBody2D" parent="LevelBackground"]
 editor/display_folded = true
@@ -117,54 +132,55 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelBackground/LWall"]
-position = Vector2( -0.904263, -809.105 )
+position = Vector2( -32.6041, -543.401 )
 shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="RWall" type="StaticBody2D" parent="LevelBackground"]
-position = Vector2( 1681.1, 280.412 )
-script = ExtResource( 5 )
+editor/display_folded = true
+position = Vector2( 9531.25, 548.835 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
 
-[node name="Area2D" type="Area2D" parent="LevelBackground/RWall"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelBackground/RWall/Area2D"]
-position = Vector2( -136.094, -121.624 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelBackground/RWall"]
+position = Vector2( -4, 0 )
 shape = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="LevelBackground/RWall"]
-position = Vector2( -88.1787, -111.532 )
-scale = Vector2( 0.5, 1 )
-shape = SubResource( 3 )
-
-[node name="Frog Cutscene" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1367.44, 142.376 )
-scale = Vector2( 0.05, 0.05 )
-collision_mask = 12
-script = ExtResource( 7 )
+[node name="Frog Cutscene" parent="." instance=ExtResource( 5 )]
+editor/display_folded = true
+position = Vector2( 7161.62, 894.068 )
+scale = Vector2( 0.25, 0.25 )
 
 [node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="Frog Cutscene"]
-stream = ExtResource( 8 )
+stream = ExtResource( 6 )
 volume_db = 6.0
+autoplay = true
 
-[node name="PlayerV2" parent="." instance=ExtResource( 9 )]
-position = Vector2( 44.1424, 143.585 )
-scale = Vector2( 0.1, 0.1 )
-collision_mask = 30
+[node name="PlayerV2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 4204.21, 813.139 )
+scale = Vector2( 0.5, 0.5 )
+max_health = 100.0
+speed = 250.0
 
 [node name="Camera2D" type="Camera2D" parent="PlayerV2"]
-position = Vector2( -102.77, -22.583 )
+position = Vector2( 3.3972, 2.41528 )
 current = true
-limit_left = 0
-limit_top = 0
+limit_left = 10
+limit_top = 10
 limit_right = 9500
-limit_bottom = 180
+limit_bottom = 1055
 limit_smoothed = true
 smoothing_enabled = true
 drag_margin_left = 0.0
 drag_margin_right = 0.0
 editor_draw_limits = true
 
-[node name="SlimeBoss" parent="." instance=ExtResource( 10 )]
-position = Vector2( 1295.78, 102.956 )
-scale = Vector2( 0.3, 0.3 )
-[connection signal="body_entered" from="LevelBackground/RWall/Area2D" to="LevelBackground/RWall" method="_on_Area2D_body_entered"]
-[connection signal="killed" from="SlimeBoss" to="Frog Cutscene" method="_on_SlimeBoss_killed"]
+[node name="SlimeBoss" parent="." instance=ExtResource( 8 )]
+position = Vector2( 5099.99, 804.104 )
