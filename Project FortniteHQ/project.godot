@@ -16,8 +16,9 @@ _global_script_class_icons={
 [application]
 
 config/name="Project FortniteHQ"
-run/main_scene="res://scenes/TitleScreen.tscn"
-boot_splash/image="res://assets/ENVIRONMENT/burning_town_back.png"
+run/main_scene="res://scenes/title/TitleScreen.tscn"
+boot_splash/image="res://scenes/cutscene1/burning_town_back.png"
+boot_splash/bg_color=Color( 0.960784, 0.207843, 0.207843, 1 )
 config/icon="res://Icon.png"
 
 [display]

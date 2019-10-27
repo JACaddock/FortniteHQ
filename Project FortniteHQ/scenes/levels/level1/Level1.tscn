@@ -1,0 +1,151 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://enemies/slimesmall/SlimeSmall.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/levels/level1/bg/town-forest_transition_back.png" type="Texture" id=2]
+[ext_resource path="res://scenes/levels/level1/bg/slime_forest_back.png" type="Texture" id=3]
+[ext_resource path="res://scenes/levels/level1/bg/cave_entrance_back.png" type="Texture" id=4]
+[ext_resource path="res://scenes/levels/level1/Level1.gd" type="Script" id=5]
+[ext_resource path="res://characters/frog/FrogV1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://characters/frog/FrogV1.gd" type="Script" id=7]
+[ext_resource path="res://sounds/Well, you are a strong one aren't you.wav" type="AudioStream" id=8]
+[ext_resource path="res://characters/player/V2/PlayerV2.tscn" type="PackedScene" id=9]
+[ext_resource path="res://enemies/boss/slime/SlimeBoss.tscn" type="PackedScene" id=10]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 930.043, 40 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 50.3823, 319.606 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 51.6636, 237.128 )
+
+[node name="Level1" type="Node2D"]
+
+[node name="SmallSlime00" parent="." instance=ExtResource( 1 )]
+position = Vector2( 577.026, 136.092 )
+
+[node name="SmallSlime01" parent="." instance=ExtResource( 1 )]
+position = Vector2( 902.495, 130.296 )
+
+[node name="SmallSlime02" parent="." instance=ExtResource( 1 )]
+position = Vector2( 825.865, 129.255 )
+
+[node name="SmallSlime03" parent="." instance=ExtResource( 1 )]
+position = Vector2( 773.673, 136.611 )
+
+[node name="SmallSlime04" parent="." instance=ExtResource( 1 )]
+position = Vector2( 967.772, 136.778 )
+
+[node name="SmallSlime05" parent="." instance=ExtResource( 1 )]
+position = Vector2( 328.032, 137.375 )
+
+[node name="SmallSlime06" parent="." instance=ExtResource( 1 )]
+position = Vector2( 527.358, 136.379 )
+
+[node name="SmallSlime07" parent="." instance=ExtResource( 1 )]
+position = Vector2( 455.839, 140.502 )
+
+[node name="SmallSlime08" parent="." instance=ExtResource( 1 )]
+position = Vector2( 658.988, 136.783 )
+
+[node name="LevelBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="LevelBackground"]
+editor/display_folded = true
+position = Vector2( -160.237, -87.9119 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="VilltWood" type="Sprite" parent="LevelBackground/ParallaxLayer"]
+position = Vector2( 320.451, 178 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 2 )
+
+[node name="Wood00" type="Sprite" parent="LevelBackground/ParallaxLayer"]
+position = Vector2( 478.134, 88 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Wood01" type="Sprite" parent="LevelBackground/ParallaxLayer"]
+position = Vector2( 797, 88 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Wood02" type="Sprite" parent="LevelBackground/ParallaxLayer"]
+position = Vector2( 1113.5, 88 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="WoodtCave" type="Sprite" parent="LevelBackground/ParallaxLayer"]
+position = Vector2( 1591.72, 178 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 4 )
+
+[node name="PlayerPlat" type="StaticBody2D" parent="LevelBackground"]
+position = Vector2( 400, 440 )
+collision_layer = 4
+collision_mask = 0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelBackground/PlayerPlat"]
+position = Vector2( 400, -220.7 )
+shape = SubResource( 1 )
+
+[node name="LWall" type="StaticBody2D" parent="LevelBackground"]
+editor/display_folded = true
+position = Vector2( -48.9061, 1010.73 )
+collision_layer = 4
+collision_mask = 0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelBackground/LWall"]
+position = Vector2( -0.904263, -809.105 )
+shape = SubResource( 2 )
+
+[node name="RWall" type="StaticBody2D" parent="LevelBackground"]
+position = Vector2( 1681.1, 280.412 )
+collision_layer = 4
+script = ExtResource( 5 )
+
+[node name="Area2D" type="Area2D" parent="LevelBackground/RWall"]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelBackground/RWall/Area2D"]
+position = Vector2( -136.094, -121.624 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="LevelBackground/RWall"]
+position = Vector2( -88.1787, -111.532 )
+scale = Vector2( 0.5, 1 )
+shape = SubResource( 3 )
+
+[node name="Frog Cutscene" parent="." instance=ExtResource( 6 )]
+editor/display_folded = true
+position = Vector2( 1417.77, 140.268 )
+collision_mask = 12
+script = ExtResource( 7 )
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="Frog Cutscene"]
+stream = ExtResource( 8 )
+volume_db = 6.0
+
+[node name="PlayerV2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 44.1424, 143.585 )
+
+[node name="SlimeBoss" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1295.78, 102.956 )
+scale = Vector2( 0.3, 0.3 )
+[connection signal="body_entered" from="LevelBackground/RWall/Area2D" to="LevelBackground/RWall" method="_on_Area2D_body_entered"]
+[connection signal="killed" from="SlimeBoss" to="Frog Cutscene" method="_on_SlimeBoss_killed"]

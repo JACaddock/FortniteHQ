@@ -1,0 +1,295 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://enemies/boss/slime/SlimeBoss.gd" type="Script" id=1]
+[ext_resource path="res://enemies/boss/slime/SlimeBossSS.png" type="Texture" id=2]
+[ext_resource path="res://UI/TempHealthBar.tscn" type="PackedScene" id=3]
+
+
+
+
+
+[sub_resource type="Animation" id=1]
+resource_name = "Jump L"
+length = 1.7
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 1.3, 1.3, 1.4, 1.5, 1.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 6, 7, 6, 8, 9, 10 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Body:polygon")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 1.3, 1.4, 1.5, 1.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ PoolVector2Array( -48.5136, -14.7823, -74.9841, 11.6881, -95.1521, 50.1334, -93.8916, 110.007, -65.6801, 200.066, 232.226, 199.292, 174.192, 148.222, 137.051, 97.9266, 114.611, 43.7619, 92.9451, -5.76009, 68.1841, -17.3668, 39.7213, -29.2781, 37.2003, -99.8661, -16.3709, -99.8661, -15.7406, -30.5386 ), PoolVector2Array( -45.5617, -27.426, -71.8703, -1.89117, -94.31, 43.7619, -93.8916, 110.007, -50.9782, 173.757, -65.6801, 200.066, 203.596, 199.292, 175.74, 167.567, 161.812, 142.806, 137.051, 97.9266, 126.218, 63.8802, 114.611, 43.7619, 92.9451, -5.76009, 71.2792, -28.1997, 31.0426, -40.5802, 32.5902, -89.3285, -16.9318, -89.3285, -17.7056, -39.0327 ), PoolVector2Array( -50.9782, -32.0686, -83.477, -1.11739, -102.048, 39.893, -101.274, 85.5461, -80.3819, 145.901, -31.6337, 174.531, -40.919, 200.066, 158.717, 196.971, 140.146, 162.15, 138.598, 137.389, 137.824, 84.7723, 117.706, 31.3814, 91.3976, -13.4979, 65.8628, -36.7113, 30.2688, -50.6394, 28.7213, -99.3876, -20.0269, -99.3876, -19.2532, -49.8656 ), PoolVector2Array( -50.9782, -32.0686, -72.6441, -15.8192, -92.7624, 22.0961, -95.0837, 77.8083, -73.4179, 131.199, -10.7416, 169.115, -15.3843, 200.066, 125.444, 199.292, 91.3976, 154.413, 137.824, 101.022, 135.503, 55.3687, 120.801, 17.4534, 99.1354, -22.7833, 73.6006, -48.3181, 38.7804, -53.7345, 38.0067, -111.768, -14.6105, -112.542, -14.6105, -51.4132 ), PoolVector2Array( -54.0733, -44.4492, -74.1917, -24.3308, -94.31, 13.5845, -95.8575, 66.9754, -73.4179, 131.199, -12.2891, 159.055, 61.9939, 163.698, 103.004, 135.068, 133.182, 89.415, 135.503, 55.3687, 120.801, 17.4534, 100.683, -31.2949, 69.7317, -56.8297, 41.1018, -66.8888, 34.9115, -118.732, -13.8367, -121.053, -14.6105, -61.4723 ), PoolVector2Array( -53.2996, -60.6986, -85.0246, -32.0686, -96.6313, 1.20395, -95.8575, 56.9162, -85.0246, 97.9266, -57.9422, 125.783, -14.6105, 152.091, 49.6134, 155.186, 88.3024, 138.937, 127.765, 80.1297, 127.765, 32.929, 103.778, -29.7473, 82.1122, -59.151, 34.1378, -79.2693, 31.0426, -131.113, -16.1581, -128.791, -16.9318, -80.8169 ), PoolVector2Array( -53.2996, -60.6986, -85.0246, -32.0686, -96.6313, 1.20395, -95.8575, 56.9162, -85.0246, 97.9266, -57.9422, 125.783, -14.6105, 152.091, 46.5182, 150.544, 85.2073, 128.104, 127.765, 80.1297, 127.765, 32.929, 103.778, -29.7473, 82.1122, -59.151, 34.1378, -79.2693, 31.0426, -131.113, -16.1581, -128.791, -16.9318, -80.8169 ), PoolVector2Array( -53.2996, -60.6986, -85.0246, -32.0686, -96.6313, 1.20395, -95.8575, 56.9162, -85.0246, 97.9266, -57.9422, 125.783, -14.6105, 152.091, 46.5182, 150.544, 85.2073, 128.104, 127.765, 80.1297, 127.765, 32.929, 103.778, -29.7473, 82.1122, -59.151, 34.1378, -79.2693, 31.0426, -131.113, -16.1581, -128.791, -16.9318, -80.8169 ), PoolVector2Array( -57.9422, -44.4492, -96.6313, 1.20395, -109.786, 49.9522, -93.5362, 104.891, -68.0014, 137.389, -20.8007, 199.292, 114.611, 199.292, 73.6006, 155.96, 89.0762, 142.806, 116.159, 114.176, 123.896, 55.3687, 104.552, 5.84663, 70.5055, -42.1278, 26.3999, -63.0199, 25.6262, -119.506, -26.2172, -120.28, -27.7648, -56.0559 ), PoolVector2Array( -107.464, 6.62042, -119.071, 39.1192, -119.071, 89.415, -102.048, 135.068, -55.6209, 168.341, -57.1685, 199.292, 139.372, 199.292, 115.385, 155.96, 124.67, 132.747, 111.516, 63.1065, 89.0762, 12.0369, 58.125, -35.1638, 17.8883, -50.6394, 11.6981, -113.316, -41.6928, -111.768, -41.6928, -48.3181, -88.8935, -18.1406 ), PoolVector2Array( -107.464, 6.62042, -119.071, 39.1192, -119.071, 89.415, -103.595, 146.675, -73.4179, 178.4, -91.2148, 198.518, 177.287, 197.744, 137.051, 149.77, 111.516, 63.1065, 89.0762, 12.0369, 58.125, -35.1638, 17.8883, -50.6394, 11.6981, -113.316, -41.6928, -111.768, -41.6928, -48.3181, -88.8935, -18.1406 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Body:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Jump R"
+length = 1.7
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 1.3, 1.3, 1.4, 1.5, 1.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 6, 7, 6, 8, 9, 10 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Body:polygon")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 1.3, 1.4, 1.5, 1.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ PoolVector2Array( -48.5136, -14.7823, -74.9841, 11.6881, -95.1521, 50.1334, -93.8916, 110.007, -65.6801, 200.066, 232.226, 199.292, 174.192, 148.222, 137.051, 97.9266, 114.611, 43.7619, 92.9451, -5.76009, 68.1841, -17.3668, 39.7213, -29.2781, 37.2003, -99.8661, -16.3709, -99.8661, -15.7406, -30.5386 ), PoolVector2Array( -45.5617, -27.426, -71.8703, -1.89117, -94.31, 43.7619, -93.8916, 110.007, -50.9782, 173.757, -65.6801, 200.066, 203.596, 199.292, 175.74, 167.567, 161.812, 142.806, 137.051, 97.9266, 126.218, 63.8802, 114.611, 43.7619, 92.9451, -5.76009, 71.2792, -28.1997, 31.0426, -40.5802, 32.5902, -89.3285, -16.9318, -89.3285, -17.7056, -39.0327 ), PoolVector2Array( -50.9782, -32.0686, -83.477, -1.11739, -102.048, 39.893, -101.274, 85.5461, -80.3819, 145.901, -31.6337, 174.531, -40.919, 200.066, 158.717, 196.971, 140.146, 162.15, 138.598, 137.389, 137.824, 84.7723, 117.706, 31.3814, 91.3976, -13.4979, 65.8628, -36.7113, 30.2688, -50.6394, 28.7213, -99.3876, -20.0269, -99.3876, -19.2532, -49.8656 ), PoolVector2Array( -50.9782, -32.0686, -72.6441, -15.8192, -92.7624, 22.0961, -95.0837, 77.8083, -73.4179, 131.199, -10.7416, 169.115, -15.3843, 200.066, 125.444, 199.292, 91.3976, 154.413, 137.824, 101.022, 135.503, 55.3687, 120.801, 17.4534, 99.1354, -22.7833, 73.6006, -48.3181, 38.7804, -53.7345, 38.0067, -111.768, -14.6105, -112.542, -14.6105, -51.4132 ), PoolVector2Array( -54.0733, -44.4492, -74.1917, -24.3308, -94.31, 13.5845, -95.8575, 66.9754, -73.4179, 131.199, -12.2891, 159.055, 61.9939, 163.698, 103.004, 135.068, 133.182, 89.415, 135.503, 55.3687, 120.801, 17.4534, 100.683, -31.2949, 69.7317, -56.8297, 41.1018, -66.8888, 34.9115, -118.732, -13.8367, -121.053, -14.6105, -61.4723 ), PoolVector2Array( -53.2996, -60.6986, -85.0246, -32.0686, -96.6313, 1.20395, -95.8575, 56.9162, -85.0246, 97.9266, -57.9422, 125.783, -14.6105, 152.091, 49.6134, 155.186, 88.3024, 138.937, 127.765, 80.1297, 127.765, 32.929, 103.778, -29.7473, 82.1122, -59.151, 34.1378, -79.2693, 31.0426, -131.113, -16.1581, -128.791, -16.9318, -80.8169 ), PoolVector2Array( -53.2996, -60.6986, -85.0246, -32.0686, -96.6313, 1.20395, -95.8575, 56.9162, -85.0246, 97.9266, -57.9422, 125.783, -14.6105, 152.091, 46.5182, 150.544, 85.2073, 128.104, 127.765, 80.1297, 127.765, 32.929, 103.778, -29.7473, 82.1122, -59.151, 34.1378, -79.2693, 31.0426, -131.113, -16.1581, -128.791, -16.9318, -80.8169 ), PoolVector2Array( -53.2996, -60.6986, -85.0246, -32.0686, -96.6313, 1.20395, -95.8575, 56.9162, -85.0246, 97.9266, -57.9422, 125.783, -14.6105, 152.091, 46.5182, 150.544, 85.2073, 128.104, 127.765, 80.1297, 127.765, 32.929, 103.778, -29.7473, 82.1122, -59.151, 34.1378, -79.2693, 31.0426, -131.113, -16.1581, -128.791, -16.9318, -80.8169 ), PoolVector2Array( -57.9422, -44.4492, -96.6313, 1.20395, -109.786, 49.9522, -93.5362, 104.891, -68.0014, 137.389, -20.8007, 199.292, 114.611, 199.292, 73.6006, 155.96, 89.0762, 142.806, 116.159, 114.176, 123.896, 55.3687, 104.552, 5.84663, 70.5055, -42.1278, 26.3999, -63.0199, 25.6262, -119.506, -26.2172, -120.28, -27.7648, -56.0559 ), PoolVector2Array( -107.464, 6.62042, -119.071, 39.1192, -119.071, 89.415, -102.048, 135.068, -55.6209, 168.341, -57.1685, 199.292, 139.372, 199.292, 115.385, 155.96, 124.67, 132.747, 111.516, 63.1065, 89.0762, 12.0369, 58.125, -35.1638, 17.8883, -50.6394, 11.6981, -113.316, -41.6928, -111.768, -41.6928, -48.3181, -88.8935, -18.1406 ), PoolVector2Array( -107.464, 6.62042, -119.071, 39.1192, -119.071, 89.415, -103.595, 146.675, -73.4179, 178.4, -91.2148, 198.518, 177.287, 197.744, 137.051, 149.77, 111.516, 63.1065, 89.0762, 12.0369, 58.125, -35.1638, 17.8883, -50.6394, 11.6981, -113.316, -41.6928, -111.768, -41.6928, -48.3181, -88.8935, -18.1406 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.0240622 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Body:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Walk L"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 11, 12, 13, 14 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Body:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Body:polygon")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ PoolVector2Array( -48.5136, -14.7823, -74.9841, 11.6881, -95.1521, 50.1334, -93.8916, 110.007, -65.6801, 200.066, 232.226, 199.292, 174.192, 148.222, 137.051, 97.9266, 114.611, 43.7619, 92.9451, -5.76009, 68.1841, -17.3668, 39.7213, -29.2781, 37.2003, -99.8661, -16.3709, -99.8661, -15.7406, -30.5386 ), PoolVector2Array( -61.5975, -11.74, -94.0875, 14.4325, -116.65, 59.5575, -116.65, 125.44, -65.6801, 200.066, 232.226, 199.292, 145.978, 152.515, 117.098, 108.292, 94.535, 62.265, 70.1675, 6.30998, 14.2125, -18.96, 9.70001, -84.8425, -44.45, -81.2325, -46.255, -19.8625 ), PoolVector2Array( -68.8175, -27.985, -94.0875, -3.61752, -122.065, 44.215, -122.967, 100.17, -109.43, 162.442, -84.16, 199.445, 232.226, 199.292, 143.27, 147.1, 112.585, 95.6575, 95.4375, 50.5325, 70.1675, 6.30998, 38.58, -34.3025, 5.1875, -37.9125, 5.1875, -89.355, -47.1575, -91.16, -47.1575, -39.7175 ), PoolVector2Array( -64.305, -37.9125, -89.575, -15.35, -116.65, 33.385, -117.552, 92.0475, -107.625, 158.832, -84.16, 199.445, 232.226, 199.292, 157.71, 137.172, 119.805, 82.12, 98.145, 29.775, 67.46, -26.18, 45.8, -44.23, 13.31, -51.45, 14.2125, -100.185, -40.84, -101.088, -39.035, -50.5475 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 1.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 11, 12, 13, 14 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Body:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Body:polygon")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ PoolVector2Array( -48.5136, -14.7823, -74.9841, 11.6881, -95.1521, 50.1334, -93.8916, 110.007, -65.6801, 200.066, 232.226, 199.292, 174.192, 148.222, 137.051, 97.9266, 114.611, 43.7619, 92.9451, -5.76009, 68.1841, -17.3668, 39.7213, -29.2781, 37.2003, -99.8661, -16.3709, -99.8661, -15.7406, -30.5386 ), PoolVector2Array( -61.5975, -11.74, -94.0875, 14.4325, -116.65, 59.5575, -116.65, 125.44, -65.6801, 200.066, 232.226, 199.292, 145.978, 152.515, 117.098, 108.292, 94.535, 62.265, 70.1675, 6.30998, 14.2125, -18.96, 9.70001, -84.8425, -44.45, -81.2325, -46.255, -19.8625 ), PoolVector2Array( -68.8175, -27.985, -94.0875, -3.61752, -122.065, 44.215, -122.967, 100.17, -109.43, 162.442, -84.16, 199.445, 232.226, 199.292, 143.27, 147.1, 112.585, 95.6575, 95.4375, 50.5325, 70.1675, 6.30998, 38.58, -34.3025, 5.1875, -37.9125, 5.1875, -89.355, -47.1575, -91.16, -47.1575, -39.7175 ), PoolVector2Array( -64.305, -37.9125, -89.575, -15.35, -116.65, 33.385, -117.552, 92.0475, -107.625, 158.832, -84.16, 199.445, 232.226, 199.292, 157.71, 137.172, 119.805, 82.12, 98.145, 29.775, 67.46, -26.18, 45.8, -44.23, 13.31, -51.45, 14.2125, -100.185, -40.84, -101.088, -39.035, -50.5475 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "Damage"
+length = 0.42
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.905882, 0.172549, 0.172549, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 1136.28, 234.896 )
+
+[node name="SlimeBoss" type="KinematicBody2D" groups=[
+"enemies",
+]]
+collision_layer = 16
+collision_mask = 21
+script = ExtResource( 1 )
+max_health = 10.0
+
+[node name="Sprite" type="Sprite" parent="." groups=[
+"enemies",
+]]
+position = Vector2( 3, -1 )
+texture = ExtResource( 2 )
+vframes = 2
+hframes = 11
+frame = 6
+
+[node name="Body" type="CollisionPolygon2D" parent="." groups=[
+"enemies",
+]]
+visible = false
+position = Vector2( 1, -1 )
+polygon = PoolVector2Array( -53.2996, -60.6986, -85.0246, -32.0686, -96.6313, 1.20395, -95.8575, 56.9162, -85.0246, 97.9266, -57.9422, 125.783, -14.6105, 152.091, 46.5182, 150.544, 85.2073, 128.104, 127.765, 80.1297, 127.765, 32.929, 103.778, -29.7473, 82.1122, -59.151, 34.1378, -79.2693, 31.0426, -131.113, -16.1581, -128.791, -16.9318, -80.8169 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." groups=[
+"enemies",
+]]
+"anims/Jump L" = SubResource( 1 )
+"anims/Jump R" = SubResource( 2 )
+"anims/Walk L" = SubResource( 3 )
+"anims/Walk R" = SubResource( 4 )
+
+[node name="EffectsPlayer" type="AnimationPlayer" parent="."]
+anims/Damage = SubResource( 5 )
+
+[node name="Detector" type="Area2D" parent="."]
+editor/display_folded = true
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]
+shape = SubResource( 6 )
+
+[node name="CycleTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="IFrames" type="Timer" parent="."]
+one_shot = true
+
+[node name="TempHealthBar" parent="." instance=ExtResource( 3 )]
+margin_left = -107.924
+margin_top = -209.372
+margin_right = 6.07629
+margin_bottom = -209.372
+rect_scale = Vector2( 0.5, 0.5 )
+[connection signal="health_updated" from="." to="TempHealthBar" method="_on_health_updated"]
+[connection signal="max_health_updated" from="." to="TempHealthBar" method="_on_max_health_updated"]
+[connection signal="body_entered" from="Detector" to="." method="_on_Detector_body_entered"]
+[connection signal="body_exited" from="Detector" to="." method="_on_Detector_body_exited"]
+[connection signal="timeout" from="CycleTimer" to="." method="_on_CycleTimer_timeout"]
