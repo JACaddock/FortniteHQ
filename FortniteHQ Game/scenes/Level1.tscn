@@ -97,8 +97,9 @@ scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 4 )
 
 [node name="PlayerPlat" type="StaticBody2D" parent="LevelBackground"]
-editor/display_folded = true
 position = Vector2( 400, 440 )
+collision_layer = 4
+collision_mask = 0
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
@@ -111,6 +112,8 @@ shape = SubResource( 1 )
 [node name="LWall" type="StaticBody2D" parent="LevelBackground"]
 editor/display_folded = true
 position = Vector2( -48.9061, 1010.73 )
+collision_layer = 4
+collision_mask = 0
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
@@ -122,9 +125,11 @@ shape = SubResource( 2 )
 
 [node name="RWall" type="StaticBody2D" parent="LevelBackground"]
 position = Vector2( 1681.1, 280.412 )
+collision_layer = 4
 script = ExtResource( 5 )
 
 [node name="Area2D" type="Area2D" parent="LevelBackground/RWall"]
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelBackground/RWall/Area2D"]
 position = Vector2( -136.094, -121.624 )
@@ -136,8 +141,8 @@ scale = Vector2( 0.5, 1 )
 shape = SubResource( 3 )
 
 [node name="Frog Cutscene" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1367.44, 142.376 )
-scale = Vector2( 0.05, 0.05 )
+editor/display_folded = true
+position = Vector2( 1417.77, 140.268 )
 collision_mask = 12
 script = ExtResource( 7 )
 
@@ -147,7 +152,6 @@ volume_db = 6.0
 
 [node name="PlayerV2" parent="." instance=ExtResource( 9 )]
 position = Vector2( 44.1424, 143.585 )
-collision_mask = 30
 
 [node name="SlimeBoss" parent="." instance=ExtResource( 10 )]
 position = Vector2( 1295.78, 102.956 )

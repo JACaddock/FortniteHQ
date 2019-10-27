@@ -36,6 +36,8 @@ animations = [ {
 extents = Vector2( 98.5527, 464.231 )
 
 [node name="Frog Cutscene" type="KinematicBody2D"]
+scale = Vector2( 0.05, 0.05 )
+collision_mask = 4
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )

@@ -804,6 +804,8 @@ tracks/9/keys = {
 extents = Vector2( 90.1127, 205.358 )
 
 [node name="GoblinBoss" type="KinematicBody2D"]
+collision_layer = 16
+collision_mask = 21
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )

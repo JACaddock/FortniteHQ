@@ -233,6 +233,8 @@ extents = Vector2( 1136.28, 234.896 )
 [node name="SlimeBoss" type="KinematicBody2D" groups=[
 "enemies",
 ]]
+collision_layer = 16
+collision_mask = 21
 script = ExtResource( 1 )
 max_health = 10.0
 

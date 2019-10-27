@@ -12,9 +12,8 @@ var onGround = false
 var velocity = Vector2()
 var direction = 1
 var attacking = false
-var alive = true
 
-export (float) var max_health = 5
+export (float) var max_health = 6
 export (float) var strength = 2
 export (float) var speed = 100
 
@@ -79,18 +78,17 @@ func get_anim():
 
 
 func _physics_process(delta):
-    if alive:
-        get_input()
-        get_anim()
+    get_input()
+    get_anim()
         
-        velocity.y += GRAVITY + (delta * 10)
+    velocity.y += GRAVITY + (delta * 10)
             
-        if is_on_floor():
-            onGround = true
-        else:
-            onGround = false
+    if is_on_floor():
+        onGround = true
+    else:
+        onGround = false
     
-        velocity = move_and_slide( velocity, FLOOR )
+    velocity = move_and_slide( velocity, FLOOR )
                 
 
 func anim_switch(animation):
@@ -108,10 +106,11 @@ func damage(amount):
     
         
 func kill():
-    alive = false
+    $Body.remove_from_group("player")
     anim_switch("Dead")
     IFrameTimer.stop()
-    effectsplayer.stop()
+    effectsplayer.queue_free()
+    set_physics_process(false)
 
     
 func _set_health(value):

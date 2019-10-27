@@ -489,6 +489,8 @@ tracks/5/keys = {
 }
 
 [node name="Skeleton Boss" type="KinematicBody2D"]
+collision_layer = 16
+collision_mask = 21
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
